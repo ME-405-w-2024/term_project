@@ -1,0 +1,16 @@
+import pyb
+
+
+DRV8825_DIR_PIN = pyb.Pin.board.PC3
+DRV8825_STEP_PIN = pyb.Pin.board.PA0
+DRV8825_SLEEP_PIN = pyb.Pin.board.PB3
+DRV8825_RESET_PIN = pyb.Pin.board.PA10
+DRV8825_ENABLE_PIN = pyb.Pin.board.PA4
+DRV8825_M0_PIN = pyb.Pin.board.PB0
+DRV8825_M1_PIN = pyb.Pin.board.PC1
+DRV8825_M2_PIN = pyb.Pin.board.PC0
+
+
+DRV8825_STEP_PIN_TIMER_NUM = 2
+DRV8825_STEP_PIN_TIMER_CHAN = 1
+
