@@ -151,11 +151,11 @@ def end_rotate(motor_driver: DRV8825_driver.DRV8825, stepper_timer: pyb.Timer):
     stepper_timer.deinit()
 
 
-def percent_to_pwm(input):
+def percent_to_pwm(input, max_pwm, min_pwm):
 
-    pwm_range = globaldefs.FLYWHEEL_MOTOR_MAX_PWM-globaldefs.FLYWHEEL_MOTOR_MIN_PWM
+    pwm_range = max_pwm-min_pwm
 
-    pwm_percent = globaldefs.FLYWHEEL_MOTOR_MIN_PWM + (pwm_range*input)
+    pwm_percent = min_pwm + (pwm_range*input)
 
     return pwm_percent
 
@@ -169,12 +169,21 @@ if __name__ == "__main__":
     step_timer = pyb.Timer(4, freq=(100000))    # freq in Hz
 
 
-    # flywheel_motor_pwm_pin = pyb.Pin(globaldefs.FLYWHEEL_MOTOR_PWM_PIN, pyb.Pin.OUT_PP)
-    # flywheel_motor_pwm_timer = pyb.Timer(globaldefs.FLYWHEEL_MOTOR_PWM_PIN_TIMER_NUM, freq=globaldefs.FLYWHEEL_MOTOR_PWM_FREQUENCY)
-    # flywheel_motor_pwm_timer_channel= flywheel_motor_pwm_timer.channel(globaldefs.FLYWHEEL_MOTOR_PWM_PIN_TIMER_CHANNEL, pyb.Timer.PWM, pin=flywheel_motor_pwm_pin)
+    flywheel_motor_pwm_pin = pyb.Pin(globaldefs.FLYWHEEL_MOTOR_PWM_PIN, pyb.Pin.OUT_PP)
+    flywheel_motor_pwm_timer = pyb.Timer(globaldefs.FLYWHEEL_MOTOR_PWM_PIN_TIMER_NUM, freq=globaldefs.FLYWHEEL_MOTOR_PWM_FREQUENCY)
+    flywheel_motor_pwm_timer_channel= flywheel_motor_pwm_timer.channel(globaldefs.FLYWHEEL_MOTOR_PWM_PIN_TIMER_CHANNEL, pyb.Timer.PWM, pin=flywheel_motor_pwm_pin)
 
-    # pwm_value = percent_to_pwm(0)
-    # flywheel_motor_pwm_timer_channel.pulse_width_percent(pwm_value)
+    flywheel_pwm_value = percent_to_pwm(0, globaldefs.FLYWHEEL_MOTOR_MAX_PWM, globaldefs.FLYWHEEL_MOTOR_MIN_PWM)
+    flywheel_motor_pwm_timer_channel.pulse_width_percent(flywheel_pwm_value)
+
+
+    servo_pwm_pin = pyb.Pin(globaldefs.SERVO_PWM_PIN, pyb.Pin.OUT_PP)
+    servo_pwm_timer = pyb.Timer(globaldefs.SERVO_PWM_PIN_TIMER_NUM, freq=globaldefs.SERVO_PWM_FREQUENCY)
+    servo_pwm_timer_channel= servo_pwm_timer.channel(globaldefs.SERVO_PWM_PIN_TIMER_CHANNEL, pyb.Timer.PWM, pin=servo_pwm_pin)
+
+    servo_pwm_value = percent_to_pwm(0, globaldefs.SERVO_MAX_PWM, globaldefs.SERVO_MIN_PWM)
+    servo_pwm_timer_channel.pulse_width_percent(servo_pwm_value)
+
 
     target_rotation_speed = rpm_to_rad_s(600)
 
@@ -184,25 +193,43 @@ if __name__ == "__main__":
 
     pivot_target_deg = 180
 
-    while 1:
+    try:
+
+        while 1:
 
 
-        if(stepper_driver.is_move_finished()):
-            end_rotate(stepper_driver, step_timer)
+            if(stepper_driver.is_move_finished()):
+                #end_rotate(stepper_driver, step_timer)
 
-            pwm_value = percent_to_pwm(0)
-            # flywheel_motor_pwm_timer_channel.pulse_width_percent(pwm_value)
+                flywheel_pwm_value = percent_to_pwm(0, globaldefs.FLYWHEEL_MOTOR_MAX_PWM, globaldefs.FLYWHEEL_MOTOR_MIN_PWM)
+                flywheel_motor_pwm_timer_channel.pulse_width_percent(flywheel_pwm_value)
 
 
-            if(button_pin.value()==0):
+                if(button_pin.value()==0):
 
-                time.sleep(1)
+                    
+                    flywheel_pwm_value = percent_to_pwm(0.3, globaldefs.FLYWHEEL_MOTOR_MAX_PWM, globaldefs.FLYWHEEL_MOTOR_MIN_PWM)
+                    flywheel_motor_pwm_timer_channel.pulse_width_percent(flywheel_pwm_value)
 
-                pwm_value = percent_to_pwm(1)
-                # flywheel_motor_pwm_timer_channel.pulse_width_percent(pwm_value)
+                    time.sleep(2)
 
-                rotate_to(stepper_driver, step_timer, pivot_target_deg, target_rotation_speed, rotation_acceleration, rotation_deceleration)
-                pwm_value = percent_to_pwm(0)
+                    servo_pwm_value = percent_to_pwm(0, globaldefs.SERVO_MAX_PWM, globaldefs.SERVO_MIN_PWM)
+                    servo_pwm_timer_channel.pulse_width_percent(servo_pwm_value)
+
+                    time.sleep(1)
+
+                    flywheel_pwm_value = percent_to_pwm(0, globaldefs.FLYWHEEL_MOTOR_MAX_PWM, globaldefs.FLYWHEEL_MOTOR_MIN_PWM)
+                    flywheel_motor_pwm_timer_channel.pulse_width_percent(flywheel_pwm_value)
+
+                    #rotate_to(stepper_driver, step_timer, pivot_target_deg, target_rotation_speed, rotation_acceleration, rotation_deceleration)
+
+    except KeyboardInterrupt:
+
+        flywheel_pwm_value = percent_to_pwm(0, globaldefs.FLYWHEEL_MOTOR_MAX_PWM, globaldefs.FLYWHEEL_MOTOR_MIN_PWM)
+        flywheel_motor_pwm_timer_channel.pulse_width_percent(flywheel_pwm_value)
+        flywheel_motor_pwm_timer.deinit() 
+        print("PANIC")
+                
             
             
         time.sleep(0.1)
