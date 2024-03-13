@@ -11,10 +11,20 @@ import micropython
 
 if "MicroPython" not in platform.platform():
     from me405_support import cotask, cqueue, task_share
+import time
+import utime as time
+from machine import I2C
+from mlx90640 import MLX90640
+from mlx90640.calibration import NUM_ROWS, NUM_COLS, IMAGE_SIZE, TEMP_K
+from mlx90640.image import ChessPattern, InterleavedPattern
+from mlx_cam import MLX_Cam
+from thermal_cam_processing import ThCamCalc
 
 
 
 micropython.alloc_emergency_exception_buf(100)
+
+CAM_I2C_ADDR = 0x33
 
 
 
@@ -30,6 +40,7 @@ def percent_to_pwm(input, max_pwm, min_pwm):
     pwm_percent = min_pwm + (pwm_range*input)
 
     return pwm_percent
+
 
 
 if __name__ == "__main__":
@@ -147,5 +158,24 @@ if __name__ == "__main__":
 
         
 
+    # initialize thermal camera
+    i2c_bus = I2C(3, freq=1000000)
+    th_cam = MLX_Cam(i2c_bus)
+    th_cam_calculator = ThCamCalc(th_cam)
+
+    #th_cam_calculator.get_centroid()
+    while 1:
+        print(th_cam_calculator.get_centroid())
+        #time.sleep_ms(50)
+
+    
+'''
+    timer_channel.pulse_width_percent(MIN_PWM)
+    print(MIN_PWM)
 
 
+    while 1:
+       pwm_value = adc_to_pwm(adc_pin.read())
+       timer_channel.pulse_width_percent(pwm_value)
+       time.sleep(0.01)
+'''
