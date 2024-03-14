@@ -52,11 +52,11 @@ if __name__ == "__main__":
     # initialize thermal camera
     i2c_bus = I2C(3, freq=1000000)
     th_cam = MLX_Cam(i2c_bus)
-    th_cam_calculator = ThCamCalc(th_cam)
+    th_cam_calculator = ThCamCalc(100, 200, 110, 32)
 
     #th_cam_calculator.get_centroid()
     while 1:
-        print(th_cam_calculator.get_centroid())
+        print(th_cam_calculator.get_centroid(th_cam))
         #time.sleep_ms(50)
 
     
