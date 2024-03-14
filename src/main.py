@@ -53,6 +53,17 @@ if __name__ == "__main__":
 
 
     stepper_i2c = pyb.I2C (1, pyb.I2C.CONTROLLER, baudrate=400000)
+
+
+    
+    # initialize thermal camera
+    cam_i2c = I2C(3, freq=3000000)
+    therm_cam = MLX_Cam(cam_i2c)
+    therm_cam_calc = ThCamCalc(DIST_CAM=globaldefs.CAMERA_TARGET_DIST_IN,
+                               DIST_SHOOTER=globaldefs.SHOOTER_TARGET_DIST_IN,
+                               FOV_ANG=globaldefs.CAM_FOV_DEG,
+                               NUM_PIXELS=globaldefs.CAM_X_PIXELS)
+
     
 
 
@@ -76,13 +87,19 @@ if __name__ == "__main__":
     ball_servo.set_angle(180)
 
 
-    target_rotation_speed = 30000
+    target_rotation_speed = 1000
 
-    rotation_acceleration = 60000
+    rotation_acceleration = 5000
 
-    rotation_deceleration = 60000
+    rotation_deceleration = 5000
 
     pivot_target_deg = int(180*9.5)
+
+    current_pos = 0
+
+    last_angle = 0
+
+    next_angle = 0
 
     try:
 
@@ -91,6 +108,17 @@ if __name__ == "__main__":
             time.sleep(0.1)
 
             if(button_pin.value()==0):
+
+                centroid = therm_cam_calc.get_centroid(therm_cam)/10
+
+                next_angle = therm_cam_calc.get_angle(centroid)
+
+                next_angle = min(220, next_angle + globaldefs.CAM_TARGET_ANGLE_OFFSET)
+
+                pivot_target_deg = int(next_angle * globaldefs.PULLEY_RATIO)
+                
+
+                print(f"Targeting at: {next_angle}, from centroid {centroid}")
 
                 #Spin flywheel
                 flywheel_pwm_value = percent_to_pwm(0.5, globaldefs.FLYWHEEL_MOTOR_MAX_PWM, globaldefs.FLYWHEEL_MOTOR_MIN_PWM)
@@ -153,29 +181,4 @@ if __name__ == "__main__":
 
         time.sleep(0.1)
         
-        
-            
-
-        
-
-    # initialize thermal camera
-    i2c_bus = I2C(3, freq=1000000)
-    th_cam = MLX_Cam(i2c_bus)
-    th_cam_calculator = ThCamCalc(th_cam)
-
-    #th_cam_calculator.get_centroid()
-    while 1:
-        print(th_cam_calculator.get_centroid())
-        #time.sleep_ms(50)
-
     
-'''
-    timer_channel.pulse_width_percent(MIN_PWM)
-    print(MIN_PWM)
-
-
-    while 1:
-       pwm_value = adc_to_pwm(adc_pin.read())
-       timer_channel.pulse_width_percent(pwm_value)
-       time.sleep(0.01)
-'''

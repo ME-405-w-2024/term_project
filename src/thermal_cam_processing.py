@@ -34,7 +34,7 @@ class ThCamCalc:
         # iterate through lines in the csv
         for line in self.camera.get_csv(image.v_ir, limits=(0, 99)):
             # convert csv style data to an array
-            line_arr = [ max(0, int(value)-50) for value in line.split(',')]
+            line_arr = [ max(1, int(value)-50) for value in line.split(',')]
             print(line_arr)
 
             for i,x in enumerate(line_arr):

@@ -174,8 +174,9 @@ class MLX_Cam:
         """
         for subpage in (0, 1):
             while not self._camera.has_data:
-                time.sleep_ms(5)
+                #time.sleep_ms(5)
                 #print('.', end='')
+                pass
             self._camera.read_image(subpage)
             state = self._camera.read_state()
             image = self._camera.process_image(subpage, state)
@@ -233,7 +234,7 @@ if __name__ == "__main__":
                     print(line)
             else:
                 camera.ascii_art(image.v_ir)
-            time.sleep_ms(10000)
+            #time.sleep_ms(10000)
 
         except KeyboardInterrupt:
             break

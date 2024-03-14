@@ -36,9 +36,9 @@ StepperDriver stepper0;
 
 
 int16_t requested_pivot_target_deg = 0;
-uint16_t requested_acceleration = 0;
-uint16_t requested_deceleration = 0;
-uint16_t requested_rotation_speed = 0;
+uint32_t requested_acceleration = 0;
+uint32_t requested_deceleration = 0;
+uint32_t requested_rotation_speed = 0;
 
 
 int posState = 0;
@@ -130,9 +130,9 @@ void receive_handler(int bytes){
     
     while(Wire.available()){
       requested_pivot_target_deg =  (int16_t) (Wire.read()<<8) + (Wire.read()); 
-      requested_rotation_speed = (uint16_t) (Wire.read()<<8) + (Wire.read());
-      requested_acceleration = (uint16_t) (Wire.read()<<8) + (Wire.read());
-      requested_deceleration = (uint16_t) (Wire.read()<<8) + (Wire.read());
+      requested_rotation_speed = ((uint32_t) (Wire.read()<<8) + (Wire.read())) * 10;
+      requested_acceleration = ((uint32_t) (Wire.read()<<8) + (Wire.read())) * 10;
+      requested_deceleration = ((uint32_t) (Wire.read()<<8) + (Wire.read())) * 10;
     }
 
   }
