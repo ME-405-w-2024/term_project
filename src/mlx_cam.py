@@ -179,7 +179,8 @@ class MLX_Cam:
 
         for subpage in (0, 1):
             while not self._camera.has_data:
-                time.sleep_ms(50)
+                #time.sleep_ms(50)
+                pass
             image = self._camera.read_image(subpage)
 
         return image

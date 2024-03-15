@@ -89,11 +89,14 @@ if __name__ == "__main__":
 
     target_rotation_speed = 1000
 
-    rotation_acceleration = 5000
+    rotation_acceleration = 9000
 
-    rotation_deceleration = 5000
+    rotation_deceleration = 9000
 
     pivot_target_deg = int(180*9.5)
+
+
+    fire_delay = 5000
 
     current_pos = 0
 
@@ -101,33 +104,50 @@ if __name__ == "__main__":
 
     next_angle = 0
 
+    press_time = 0
+
+
+    active = 0
+
+
+
     try:
 
         while 1:
 
-            time.sleep(0.1)
+
 
             if(button_pin.value()==0):
+
+                print("good")
+
+                press_time = time.ticks_ms()
+
+                last_angle = 0
+
+                current_pos = 0
+
+                next_angle = 0
+
+                active = 1
+                
+
+            if (active == 1):
+
+                last_angle = next_angle
 
                 centroid = therm_cam_calc.get_centroid(therm_cam)/10
 
                 next_angle = therm_cam_calc.get_angle(centroid)
 
-                next_angle = min(220, next_angle + globaldefs.CAM_TARGET_ANGLE_OFFSET)
+                next_angle = next_angle + globaldefs.CAM_TARGET_ANGLE_OFFSET
 
-                pivot_target_deg = int(next_angle * globaldefs.PULLEY_RATIO)
-                
+                angle_delta = (next_angle-last_angle)
 
-                print(f"Targeting at: {next_angle}, from centroid {centroid}")
+                current_pos += angle_delta
 
-                #Spin flywheel
-                flywheel_pwm_value = percent_to_pwm(0.5, globaldefs.FLYWHEEL_MOTOR_MAX_PWM, globaldefs.FLYWHEEL_MOTOR_MIN_PWM)
-                flywheel_motor_pwm_timer_channel.pulse_width_percent(flywheel_pwm_value)
+                pivot_target_deg = int(angle_delta * globaldefs.PULLEY_RATIO)
 
-                ball_servo.set_angle(180)
-
-                #Delay to ensure flywheel spinup
-                time.sleep(1)
 
                 #Rotation start
                 buffer = bytearray([pivot_target_deg>>8, pivot_target_deg, 
@@ -136,34 +156,72 @@ if __name__ == "__main__":
                                     rotation_deceleration>>8, rotation_deceleration])
 
                 stepper_i2c.send(send=buffer,
-                                 addr=globaldefs.STEPPER_I2C_ADDR)
+                                    addr=globaldefs.STEPPER_I2C_ADDR)
                 
-                #Delay to complete rotation
-                time.sleep(0.25)
 
-                #Fire ball
-                ball_servo.set_angle(180-30)
+                print(f"Targeting at: {angle_delta}, from centroid {centroid}")
 
-                #Delay to ensure full speed when ball fired
-                time.sleep(0.25)
+                if((time.ticks_ms() - press_time) > fire_delay):
 
-                #Flywheel spindown
-                ball_servo.set_angle(180)
-                
-                flywheel_pwm_value = percent_to_pwm(0, globaldefs.FLYWHEEL_MOTOR_MAX_PWM, globaldefs.FLYWHEEL_MOTOR_MIN_PWM)
-                flywheel_motor_pwm_timer_channel.pulse_width_percent(flywheel_pwm_value)
+                    # centroid = therm_cam_calc.get_centroid(therm_cam)/10
+
+                    # next_angle = therm_cam_calc.get_angle(centroid)
+
+                    # next_angle = min(220, next_angle + globaldefs.CAM_TARGET_ANGLE_OFFSET)
+
+                    # pivot_target_deg = int(next_angle * globaldefs.PULLEY_RATIO)
+                    
+
+                    # print(f"Targeting at: {next_angle}, from centroid {centroid}")
+
+                    #Spin flywheel
+                    flywheel_pwm_value = percent_to_pwm(0.2, globaldefs.FLYWHEEL_MOTOR_MAX_PWM, globaldefs.FLYWHEEL_MOTOR_MIN_PWM)
+                    flywheel_motor_pwm_timer_channel.pulse_width_percent(flywheel_pwm_value)
+
+                    ##ball_servo.set_angle(180)
+
+                    #Delay to ensure flywheel spinup
+                    time.sleep(1)
+
+                    #Rotation start
+                    buffer = bytearray([pivot_target_deg>>8, pivot_target_deg, 
+                                        target_rotation_speed>>8, target_rotation_speed,
+                                        rotation_acceleration>>8, rotation_acceleration,
+                                        rotation_deceleration>>8, rotation_deceleration])
+
+                    stepper_i2c.send(send=buffer,
+                                    addr=globaldefs.STEPPER_I2C_ADDR)
+                    
+                    #Delay to complete rotation
+                    time.sleep(1)
+
+                    #Fire ball
+                    ball_servo.set_angle(180-30)
+
+                    #Delay to ensure full speed when ball fired
+                    time.sleep(0.25)
+
+                    #Flywheel spindown
+                    ball_servo.set_angle(180)
+                    
+                    flywheel_pwm_value = percent_to_pwm(0, globaldefs.FLYWHEEL_MOTOR_MAX_PWM, globaldefs.FLYWHEEL_MOTOR_MIN_PWM)
+                    flywheel_motor_pwm_timer_channel.pulse_width_percent(flywheel_pwm_value)
 
 
-                #Delay to return to home when safe
-                time.sleep(1)
+                    #Delay to return to home when safe
+                    time.sleep(1)
 
-                buffer = bytearray([(-1*pivot_target_deg)>>8, (-1*pivot_target_deg), 
-                                    target_rotation_speed>>8, target_rotation_speed,
-                                    rotation_acceleration>>8, rotation_acceleration,
-                                    rotation_deceleration>>8, rotation_deceleration])
-                
-                stepper_i2c.send(send=buffer,
-                                 addr=globaldefs.STEPPER_I2C_ADDR)
+                    pivot_target_deg = int(current_pos * globaldefs.PULLEY_RATIO)
+
+                    buffer = bytearray([(-1*pivot_target_deg)>>8, (-1*pivot_target_deg), 
+                                        target_rotation_speed>>8, target_rotation_speed,
+                                        rotation_acceleration>>8, rotation_acceleration,
+                                        rotation_deceleration>>8, rotation_deceleration])
+                    
+                    stepper_i2c.send(send=buffer,
+                                    addr=globaldefs.STEPPER_I2C_ADDR)
+                    
+                    active = 0
 
                 
 
