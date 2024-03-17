@@ -1,3 +1,5 @@
+// @file StepperFunctions.h
+
 #ifndef STEPPER_FUNC_H
 #define STEPPER_FUNC_H
 
@@ -74,6 +76,10 @@ class StepperDriver{
 
 	public:
 		StepperDriver();
+		/*!
+		Stepper driver setup function
+			@param microsteps Current microstepping mode in 1/microsteps
+		*/
 		void setupStepper(int microsteps, int stepPerRev, int stepPin, int dirPin, int M1, int M2, int M3, int enablePin);
 		void setStepperSpeed(int speed);
 		void updateStepperSpeed(int speed);

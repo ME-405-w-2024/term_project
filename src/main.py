@@ -1,39 +1,44 @@
-
+"""! @file main.py
+"""  
 
 import cotask
 import task_share
 import pyb
 import globaldefs
 import platform
-import time
+import utime as time
 import servo_driver
 import micropython
+from machine import I2C
+from mlx_cam import MLX_Cam
+from thermal_cam_processing import ThCamCalc
 
 if "MicroPython" not in platform.platform():
     from me405_support import cotask, cqueue, task_share
-import time
-import utime as time
-from machine import I2C
-from mlx90640 import MLX90640
-from mlx90640.calibration import NUM_ROWS, NUM_COLS, IMAGE_SIZE, TEMP_K
-from mlx90640.image import ChessPattern, InterleavedPattern
-from mlx_cam import MLX_Cam
-from thermal_cam_processing import ThCamCalc
 
 
 
 micropython.alloc_emergency_exception_buf(100)
 
-CAM_I2C_ADDR = 0x33
-
-
 
 def rpm_to_rad_s(rpm):
-    print()
+    """! 
+        Converts a RPM value to a Rad/Sec value
+        @param rpm The input rpm to convert
+        @returns The rotational speed in Rad/Sec
+    """  
     return int(rpm/9.5493)
 
 
 def percent_to_pwm(input, max_pwm, min_pwm):
+
+    """! 
+        Converts a standard 0-100 input to a PWM percent value based on given limits
+        @param input The input percentage as a 0-100 value
+        @param max_pwm The maximum PWM output corresponding to 100%
+        @param min_pwm The minimum PWM output corresponding to 0%
+        @returns The PWM percent pertaining to the input
+    """  
 
     pwm_range = max_pwm-min_pwm
 
@@ -45,20 +50,20 @@ def percent_to_pwm(input, max_pwm, min_pwm):
 
 if __name__ == "__main__":
 
-    step_pin = pyb.Pin(globaldefs.DRV8825_STEP_PIN, pyb.Pin.OUT_PP)
-
+    ##Pin object for the input button which starts the duel sequence
     button_pin = pyb.Pin(globaldefs.ONBOARD_BUTTON_PIN, pyb.Pin.IN, pull=pyb.Pin.PULL_UP)
 
-    step_timer = pyb.Timer(4, freq=(100000))    # freq in Hz
-
-
-    stepper_i2c = pyb.I2C (1, pyb.I2C.CONTROLLER, baudrate=400000)
+    ##I2C object to communicate with the stepper driver controller
+    stepper_i2c = pyb.I2C(1, pyb.I2C.CONTROLLER, baudrate=400000)
 
 
     
     # initialize thermal camera
+    ##I2C object to communicate with the MLX camera
     cam_i2c = I2C(3, freq=3000000)
+    ##MLX Camera object 
     therm_cam = MLX_Cam(cam_i2c)
+    ##Thermal camera calculator object for returning useful targeting information
     therm_cam_calc = ThCamCalc(DIST_CAM=globaldefs.CAMERA_TARGET_DIST_IN,
                                DIST_SHOOTER=globaldefs.SHOOTER_TARGET_DIST_IN,
                                FOV_ANG=globaldefs.CAM_FOV_DEG,
@@ -66,7 +71,7 @@ if __name__ == "__main__":
 
     
 
-
+    ##Object to control the servo used to initiate firing
     ball_servo = servo_driver.ServoDriver(pwm_pin=globaldefs.SERVO_PWM_PIN, 
                                           pwm_timer_num=globaldefs.SERVO_PWM_PIN_TIMER_NUM,
                                           pwm_channel_num=globaldefs.SERVO_PWM_PIN_TIMER_CHANNEL,
@@ -76,37 +81,44 @@ if __name__ == "__main__":
                                           period_ARR=globaldefs.SERVO_TIMER_ARR,
                                           period_PS=globaldefs.SERVO_TIMER_PS)
 
-
+    ##Pin object to define the pin to be used for PWM control of the flywheel motor
     flywheel_motor_pwm_pin = pyb.Pin(globaldefs.FLYWHEEL_MOTOR_PWM_PIN, pyb.Pin.OUT_PP)
+    ##Timer object for PWM control of the flywheel motor
     flywheel_motor_pwm_timer = pyb.Timer(globaldefs.FLYWHEEL_MOTOR_PWM_PIN_TIMER_NUM, freq=globaldefs.FLYWHEEL_MOTOR_PWM_FREQUENCY)
+    ##Timer channel object for PWM control of the flywheel motor
     flywheel_motor_pwm_timer_channel= flywheel_motor_pwm_timer.channel(globaldefs.FLYWHEEL_MOTOR_PWM_PIN_TIMER_CHANNEL, pyb.Timer.PWM, pin=flywheel_motor_pwm_pin)
 
+    ##Value of the PWM to be sent to the ESC to control the flywheel motor
     flywheel_pwm_value = percent_to_pwm(0, globaldefs.FLYWHEEL_MOTOR_MAX_PWM, globaldefs.FLYWHEEL_MOTOR_MIN_PWM)
     flywheel_motor_pwm_timer_channel.pulse_width_percent(flywheel_pwm_value)
 
     ball_servo.set_angle(180)
 
-
-    target_rotation_speed = 1000
-
+    ##Target speed of the rotation of the stepper motor in RPM
+    target_rotation_speed = 10000
+    ##Target acceleration of the stepper motor in (RPM/s)/10
     rotation_acceleration = 9000
-
+    ##Target deceleration of the stepper motor in (RPM/s)/10
     rotation_deceleration = 9000
+    ##Target position for the stepper motor to rotate to in deg
+    pivot_target_deg = int(180*globaldefs.PULLEY_RATIO)
 
-    pivot_target_deg = int(180*9.5)
+    ##Delay in ms to do pure targeting before switching to firing
+    fire_delay = 4000
 
-
-    fire_delay = 5000
-
+    ##The current position of the stepper motor in deg
     current_pos = 0
 
+    ##The last position of the stepper motor in deg
     last_angle = 0
 
+    ##The next/current position of the stepper motor in deg
     next_angle = 0
 
+    ##Initial time at which the duel activation button was pressed
     press_time = 0
 
-
+    ##Flag to determine if the motor is in an active duel/targeting 
     active = 0
 
 
@@ -115,11 +127,9 @@ if __name__ == "__main__":
 
         while 1:
 
-
-
             if(button_pin.value()==0):
 
-                print("good")
+                print("Start")
 
                 press_time = time.ticks_ms()
 
@@ -136,12 +146,14 @@ if __name__ == "__main__":
 
                 last_angle = next_angle
 
+                ##The current detected centroid location
                 centroid = therm_cam_calc.get_centroid(therm_cam)/10
 
                 next_angle = therm_cam_calc.get_angle(centroid)
 
                 next_angle = next_angle + globaldefs.CAM_TARGET_ANGLE_OFFSET
 
+                ##The angle change between the last stepper angle and the next target angle
                 angle_delta = (next_angle-last_angle)
 
                 current_pos += angle_delta
@@ -150,35 +162,23 @@ if __name__ == "__main__":
 
 
                 #Rotation start
+                ##Data to send to the stepper controller
                 buffer = bytearray([pivot_target_deg>>8, pivot_target_deg, 
                                     target_rotation_speed>>8, target_rotation_speed,
                                     rotation_acceleration>>8, rotation_acceleration,
                                     rotation_deceleration>>8, rotation_deceleration])
 
-                stepper_i2c.send(send=buffer,
-                                    addr=globaldefs.STEPPER_I2C_ADDR)
+                stepper_i2c.send(buffer, globaldefs.STEPPER_I2C_ADDR)
                 
 
                 print(f"Targeting at: {angle_delta}, from centroid {centroid}")
 
                 if((time.ticks_ms() - press_time) > fire_delay):
 
-                    # centroid = therm_cam_calc.get_centroid(therm_cam)/10
-
-                    # next_angle = therm_cam_calc.get_angle(centroid)
-
-                    # next_angle = min(220, next_angle + globaldefs.CAM_TARGET_ANGLE_OFFSET)
-
-                    # pivot_target_deg = int(next_angle * globaldefs.PULLEY_RATIO)
-                    
-
-                    # print(f"Targeting at: {next_angle}, from centroid {centroid}")
-
                     #Spin flywheel
                     flywheel_pwm_value = percent_to_pwm(0.2, globaldefs.FLYWHEEL_MOTOR_MAX_PWM, globaldefs.FLYWHEEL_MOTOR_MIN_PWM)
                     flywheel_motor_pwm_timer_channel.pulse_width_percent(flywheel_pwm_value)
 
-                    ##ball_servo.set_angle(180)
 
                     #Delay to ensure flywheel spinup
                     time.sleep(1)
@@ -189,8 +189,7 @@ if __name__ == "__main__":
                                         rotation_acceleration>>8, rotation_acceleration,
                                         rotation_deceleration>>8, rotation_deceleration])
 
-                    stepper_i2c.send(send=buffer,
-                                    addr=globaldefs.STEPPER_I2C_ADDR)
+                    stepper_i2c.send(buffer, globaldefs.STEPPER_I2C_ADDR)
                     
                     #Delay to complete rotation
                     time.sleep(1)
@@ -218,8 +217,7 @@ if __name__ == "__main__":
                                         rotation_acceleration>>8, rotation_acceleration,
                                         rotation_deceleration>>8, rotation_deceleration])
                     
-                    stepper_i2c.send(send=buffer,
-                                    addr=globaldefs.STEPPER_I2C_ADDR)
+                    stepper_i2c.send(buffer, globaldefs.STEPPER_I2C_ADDR)
                     
                     active = 0
 
@@ -235,7 +233,7 @@ if __name__ == "__main__":
         ball_servo.set_angle(180)
         ball_servo.disable_stepper()
 
-        print("PANIC")
+        print("Exit")
 
         time.sleep(0.1)
         

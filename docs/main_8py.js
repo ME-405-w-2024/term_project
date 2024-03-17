@@ -1,0 +1,28 @@
+var main_8py =
+[
+    [ "percent_to_pwm", "main_8py.html#ab164e754e489663b65c13c3148f28e43", null ],
+    [ "rpm_to_rad_s", "main_8py.html#afaf87b3f79345e27db5a54617b33e545", null ],
+    [ "active", "main_8py.html#af4fbb3c05a966e6c18d24a4f7f5bde74", null ],
+    [ "angle_delta", "main_8py.html#aba8f38ed514d38da87500f7d1e295602", null ],
+    [ "ball_servo", "main_8py.html#a75e9af7e027285d631f23f428ecadc2c", null ],
+    [ "buffer", "main_8py.html#a2888d28fa35f990cfa097aa3f9ecb184", null ],
+    [ "button_pin", "main_8py.html#a2959b5e3ec15c5c117b30eee904c3849", null ],
+    [ "cam_i2c", "main_8py.html#a84cb8f752bcc1fe965e04a977768bd1f", null ],
+    [ "centroid", "main_8py.html#a1470e412ec4204c7a6da0d532a7f5220", null ],
+    [ "current_pos", "main_8py.html#a5a5199a6dca164236675d3e37e0fcae0", null ],
+    [ "fire_delay", "main_8py.html#a2e89fd1baa00880f47cad5d343a31103", null ],
+    [ "flywheel_motor_pwm_pin", "main_8py.html#a51c821af749dcb3808175ea69c37b0f2", null ],
+    [ "flywheel_motor_pwm_timer", "main_8py.html#a8b111b2b07c146603599ff54e5d2030c", null ],
+    [ "flywheel_motor_pwm_timer_channel", "main_8py.html#adf25ab9f64236879ed96a395ed322209", null ],
+    [ "flywheel_pwm_value", "main_8py.html#a2a697c253f781077d8ea245f02e1a616", null ],
+    [ "last_angle", "main_8py.html#ab56ad73d587c7a812ce5e0601fd968d3", null ],
+    [ "next_angle", "main_8py.html#a167ba26ce826e1f56571fea9b8f9fd97", null ],
+    [ "pivot_target_deg", "main_8py.html#a7ace8b8c85282db670b42bec1c11b4dc", null ],
+    [ "press_time", "main_8py.html#afb8b2dc56ddab1937a637a1f7bf5d1cc", null ],
+    [ "rotation_acceleration", "main_8py.html#a83f146ce0a1ebc6c58b109df745466c4", null ],
+    [ "rotation_deceleration", "main_8py.html#a8c544ae36e2e98f11ca3447cfb087b0e", null ],
+    [ "stepper_i2c", "main_8py.html#acd542fd9d9d373f0a00036e58d1ef201", null ],
+    [ "target_rotation_speed", "main_8py.html#a1125b45564ffc9539444c41a34e82527", null ],
+    [ "therm_cam", "main_8py.html#a10a3292b625ec3fab67d921740a14948", null ],
+    [ "therm_cam_calc", "main_8py.html#a2fb4b1d8dc63aa905107f691383da98d", null ]
+];

@@ -1,16 +1,7 @@
+"""! @file globaldefs.py
+"""  
 
-import math
 import pyb
-
-
-DRV8825_DIR_PIN = pyb.Pin.board.PC3
-DRV8825_STEP_PIN = pyb.Pin.board.PA0
-DRV8825_SLEEP_PIN = pyb.Pin.board.PA1
-DRV8825_RESET_PIN = pyb.Pin.board.PA4
-DRV8825_ENABLE_PIN = pyb.Pin.board.PB0
-DRV8825_M0_PIN = pyb.Pin.board.PB6
-DRV8825_M1_PIN = pyb.Pin.board.PA7
-DRV8825_M2_PIN = pyb.Pin.board.PA6
 
 STEPPER_I2C_ADDR = 0x69
 
@@ -43,18 +34,10 @@ PULLEY_RATIO = 9.5
 
 MICROSTEPS_PER_REV = STEP_MOTOR_STEP_PER_REV*MICROSTEPS
 
-class AccelStates():
-    error = -1
-    accelerating = 1
-    running = 2
-    decelerating = 3
-    stopped = 4
 
 M1_STEP_TASK_PRIORITY = 99
 
 
-
-##Servo
 
 SERVO_PWM_PIN = pyb.Pin.board.PA9
 SERVO_PWM_PIN_TIMER_NUM = 1

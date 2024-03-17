@@ -1,3 +1,6 @@
+"""! @file thermal_cam_processing.py
+"""  
+
 # what do we want:
 # input: camera obj
 # output: angle to turn to
@@ -35,7 +38,7 @@ class ThCamCalc:
         for line in self.camera.get_csv(image, limits=(0, 99)):
             # convert csv style data to an array
             line_arr = []
-            thresh = 90
+            thresh = 85
             for idx,val in enumerate(line.split(',')):
                 if (int(val) > thresh):
                     line_arr.append(99)
