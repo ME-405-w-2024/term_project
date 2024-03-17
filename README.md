@@ -10,10 +10,10 @@ Documentation available at: https://me-405-w-2024.github.io/term_project/
 
 
 ## Hardware Overview
-![top view]()
-![side section]()
-![para front]()
-![para rear]()
+![para front](https://github.com/ME-405-w-2024/term_project/blob/main/media/Picture1.png)
+![para rear](https://github.com/ME-405-w-2024/term_project/blob/main/media/Picture2.png)
+![top view](https://github.com/ME-405-w-2024/term_project/blob/main/media/Picture3.png)
+![side section](https://github.com/ME-405-w-2024/term_project/blob/main/media/Picture4.png)
 
 ## Software Design
 
