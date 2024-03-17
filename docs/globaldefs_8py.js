@@ -1,4 +1,26 @@
 var globaldefs_8py =
 [
-    [ "SERVO_PWM_PIN", "globaldefs_8py.html#a6c15615254a6391f55dcf900a6223a62", null ]
+    [ "ADC_MAX_INTEGER", "globaldefs_8py.html#a472b623b5adb328d8c894991c14597a8", null ],
+    [ "CAM_FOV_DEG", "globaldefs_8py.html#a204f456ab3780284b45551aa1a9fdebf", null ],
+    [ "CAM_TARGET_ANGLE_OFFSET", "globaldefs_8py.html#aa023087fb909af7e0f78e00347455f66", null ],
+    [ "CAM_X_PIXELS", "globaldefs_8py.html#a0a284c3420976b78375d05ffd181da4d", null ],
+    [ "CAMERA_TARGET_DIST_IN", "globaldefs_8py.html#ac12dfc936e712ada93b96a56d4387884", null ],
+    [ "FLYWHEEL_MOTOR_MAX_PWM", "globaldefs_8py.html#ac69a6bc22089583ed08662fb11ce5a7c", null ],
+    [ "FLYWHEEL_MOTOR_MIN_PWM", "globaldefs_8py.html#a38b8a1e11c66670fa752e8116296826d", null ],
+    [ "FLYWHEEL_MOTOR_PWM_FREQUENCY", "globaldefs_8py.html#a2d184c6e4bb075f068cb7b761b2528b1", null ],
+    [ "FLYWHEEL_MOTOR_PWM_PIN", "globaldefs_8py.html#a2ba001b4d8d62fe365bbdee8c2361534", null ],
+    [ "FLYWHEEL_MOTOR_PWM_PIN_TIMER_CHANNEL", "globaldefs_8py.html#a0e3bb8dc0b995fee666244a255994998", null ],
+    [ "FLYWHEEL_MOTOR_PWM_PIN_TIMER_NUM", "globaldefs_8py.html#a0d902640690ad616e6afb6e4f4088389", null ],
+    [ "ONBOARD_BUTTON_PIN", "globaldefs_8py.html#a0bf12ef54b52c8d8c2e66f0aef6c5ec0", null ],
+    [ "PULLEY_RATIO", "globaldefs_8py.html#afa0ebed8773c13de0045e8115795608c", null ],
+    [ "SERVO_ANGLE_RANGE", "globaldefs_8py.html#a47d0a13fbbdd1342677815e95753c1f9", null ],
+    [ "SERVO_MAX_PWM_US", "globaldefs_8py.html#a6312d0a89641776b98bd3d133581d954", null ],
+    [ "SERVO_MIN_PWM_US", "globaldefs_8py.html#a7f43041511964f44e1d635ceaad49474", null ],
+    [ "SERVO_PWM_PIN", "globaldefs_8py.html#a6c15615254a6391f55dcf900a6223a62", null ],
+    [ "SERVO_PWM_PIN_TIMER_CHANNEL", "globaldefs_8py.html#a587d0673d7cc07c97ba856df052bade7", null ],
+    [ "SERVO_PWM_PIN_TIMER_NUM", "globaldefs_8py.html#a60ee6776dac0509bf9c8a6be3239623b", null ],
+    [ "SERVO_TIMER_ARR", "globaldefs_8py.html#ac92ff053eab9ff36207c00d922132cf7", null ],
+    [ "SERVO_TIMER_PS", "globaldefs_8py.html#ad051cfb63cb9de5fdca9395d02fc607b", null ],
+    [ "SHOOTER_TARGET_DIST_IN", "globaldefs_8py.html#a0b157b78817a726b2c3aa6ce306e9430", null ],
+    [ "STEPPER_I2C_ADDR", "globaldefs_8py.html#a93aeef63150c1ff7f46622901c26170d", null ]
 ];
