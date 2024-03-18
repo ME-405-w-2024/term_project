@@ -1,4 +1,32 @@
 var class_stepper_driver =
 [
-    [ "setupStepper", "class_stepper_driver.html#a947690e3c97645cf66ed813b03798197", null ]
+    [ "calculateMoveProfile", "class_stepper_driver.html#ae87ca4795c3fc2032b7c9c4da57da448", null ],
+    [ "calculateNextStep", "class_stepper_driver.html#a645a95f0f7b7bd55ccf37a83a532d185", null ],
+    [ "changePos", "class_stepper_driver.html#a8b1c8c840444c43eafaeec873e68babe", null ],
+    [ "dirSetCCW", "class_stepper_driver.html#af9128c960dc9f5f3e5eea1514082471c", null ],
+    [ "dirSetCW", "class_stepper_driver.html#aa4ee3463dc8e8524ecb860e9694767ff", null ],
+    [ "disableStepper", "class_stepper_driver.html#a658104e1cdc5c62745156c92607cfb80", null ],
+    [ "enableStepper", "class_stepper_driver.html#aa86dc72e34e6a566df09a4e142cf54e8", null ],
+    [ "fullStep", "class_stepper_driver.html#a6be1af39caeebedf37e9d255e7d111ea", null ],
+    [ "getAcceleration", "class_stepper_driver.html#aaf1d6261637a1c594a41be373078f95e", null ],
+    [ "getAccelSteps", "class_stepper_driver.html#a920b1b9041499d1e4b732d698725baff", null ],
+    [ "getCurrentPosition", "class_stepper_driver.html#aa1f329152e62727c7d965ab65f871210", null ],
+    [ "getDeceleration", "class_stepper_driver.html#a20f896f21671fc81a8098c042ca92e4d", null ],
+    [ "getDecelSteps", "class_stepper_driver.html#a8fc4655e2e3d50cbfb2e1b1b00aac234", null ],
+    [ "getDir", "class_stepper_driver.html#a10029f9b2e6f0b3a3d480079dac3e822", null ],
+    [ "getRemainingSteps", "class_stepper_driver.html#a4260ec60dfd690576e6c8c44a15d1c5d", null ],
+    [ "getState", "class_stepper_driver.html#a0a783fcb0bdaeca474c35388b5d0397e", null ],
+    [ "getTimeToNext", "class_stepper_driver.html#a795e4fa5bfc7e4ba397ce434caf0d9c8", null ],
+    [ "incrementPos", "class_stepper_driver.html#aa87a2e9ca46d9729f361515baac423a4", null ],
+    [ "isDone", "class_stepper_driver.html#aac0fb35800f2170025da3860a9a97ed7", null ],
+    [ "pulsesPerSecond", "class_stepper_driver.html#ac4b2664e1b3b394c4092a1dc07871c91", null ],
+    [ "resetPosition", "class_stepper_driver.html#a6366b9e80c3eb1d3fcd4f1d4e0c9396d", null ],
+    [ "setAcceleration", "class_stepper_driver.html#a4bb19f2aee0f91e631d07acc679abc0c", null ],
+    [ "setBrake", "class_stepper_driver.html#ac5771b0c4254e77478baeface5a798a9", null ],
+    [ "setDeceleration", "class_stepper_driver.html#a0117275cc68737791decd44af0d09549", null ],
+    [ "setPos", "class_stepper_driver.html#a499724404fc071fad2d4a99303342f1b", null ],
+    [ "setStepperSpeed", "class_stepper_driver.html#ac05ee38ee323a507dab6cf40d46c19a1", null ],
+    [ "setupStepper", "class_stepper_driver.html#a947690e3c97645cf66ed813b03798197", null ],
+    [ "stepMicros", "class_stepper_driver.html#a95d7552817921a7254571afda99629e3", null ],
+    [ "updateStepperSpeed", "class_stepper_driver.html#ae8e516f7455003bd94b02f137185950c", null ]
 ];

@@ -69,97 +69,559 @@ $(function(){initNavTree('class_stepper_driver.html',''); initResizable(); });
   <div class="headertitle"><div class="title">StepperDriver Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="_stepper_functions_8h_source.html">StepperFunctions.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a947690e3c97645cf66ed813b03798197" id="r_a947690e3c97645cf66ed813b03798197"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a947690e3c97645cf66ed813b03798197">setupStepper</a> (int microsteps, int stepPerRev, int stepPin, int dirPin, int M1, int M2, int M3, int enablePin)</td></tr>
 <tr class="separator:a947690e3c97645cf66ed813b03798197"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac05ee38ee323a507dab6cf40d46c19a1" id="r_ac05ee38ee323a507dab6cf40d46c19a1"><td class="memItemLeft" align="right" valign="top"><a id="ac05ee38ee323a507dab6cf40d46c19a1" name="ac05ee38ee323a507dab6cf40d46c19a1"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setStepperSpeed</b> (int speed)</td></tr>
+<tr class="memitem:ac05ee38ee323a507dab6cf40d46c19a1" id="r_ac05ee38ee323a507dab6cf40d46c19a1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac05ee38ee323a507dab6cf40d46c19a1">setStepperSpeed</a> (int speed)</td></tr>
 <tr class="separator:ac05ee38ee323a507dab6cf40d46c19a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae8e516f7455003bd94b02f137185950c" id="r_ae8e516f7455003bd94b02f137185950c"><td class="memItemLeft" align="right" valign="top"><a id="ae8e516f7455003bd94b02f137185950c" name="ae8e516f7455003bd94b02f137185950c"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>updateStepperSpeed</b> (int speed)</td></tr>
+<tr class="memitem:ae8e516f7455003bd94b02f137185950c" id="r_ae8e516f7455003bd94b02f137185950c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae8e516f7455003bd94b02f137185950c">updateStepperSpeed</a> (int speed)</td></tr>
 <tr class="separator:ae8e516f7455003bd94b02f137185950c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac4b2664e1b3b394c4092a1dc07871c91" id="r_ac4b2664e1b3b394c4092a1dc07871c91"><td class="memItemLeft" align="right" valign="top"><a id="ac4b2664e1b3b394c4092a1dc07871c91" name="ac4b2664e1b3b394c4092a1dc07871c91"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>pulsesPerSecond</b> (int speed)</td></tr>
+<tr class="memitem:ac4b2664e1b3b394c4092a1dc07871c91" id="r_ac4b2664e1b3b394c4092a1dc07871c91"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac4b2664e1b3b394c4092a1dc07871c91">pulsesPerSecond</a> (int speed)</td></tr>
 <tr class="separator:ac4b2664e1b3b394c4092a1dc07871c91"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a95d7552817921a7254571afda99629e3" id="r_a95d7552817921a7254571afda99629e3"><td class="memItemLeft" align="right" valign="top"><a id="a95d7552817921a7254571afda99629e3" name="a95d7552817921a7254571afda99629e3"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>stepMicros</b> (int speed)</td></tr>
+<tr class="memitem:a95d7552817921a7254571afda99629e3" id="r_a95d7552817921a7254571afda99629e3"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a95d7552817921a7254571afda99629e3">stepMicros</a> (int speed)</td></tr>
 <tr class="separator:a95d7552817921a7254571afda99629e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa86dc72e34e6a566df09a4e142cf54e8" id="r_aa86dc72e34e6a566df09a4e142cf54e8"><td class="memItemLeft" align="right" valign="top"><a id="aa86dc72e34e6a566df09a4e142cf54e8" name="aa86dc72e34e6a566df09a4e142cf54e8"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>enableStepper</b> ()</td></tr>
+<tr class="memitem:aa86dc72e34e6a566df09a4e142cf54e8" id="r_aa86dc72e34e6a566df09a4e142cf54e8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa86dc72e34e6a566df09a4e142cf54e8">enableStepper</a> ()</td></tr>
 <tr class="separator:aa86dc72e34e6a566df09a4e142cf54e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a658104e1cdc5c62745156c92607cfb80" id="r_a658104e1cdc5c62745156c92607cfb80"><td class="memItemLeft" align="right" valign="top"><a id="a658104e1cdc5c62745156c92607cfb80" name="a658104e1cdc5c62745156c92607cfb80"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>disableStepper</b> ()</td></tr>
+<tr class="memitem:a658104e1cdc5c62745156c92607cfb80" id="r_a658104e1cdc5c62745156c92607cfb80"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a658104e1cdc5c62745156c92607cfb80">disableStepper</a> ()</td></tr>
 <tr class="separator:a658104e1cdc5c62745156c92607cfb80"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa4ee3463dc8e8524ecb860e9694767ff" id="r_aa4ee3463dc8e8524ecb860e9694767ff"><td class="memItemLeft" align="right" valign="top"><a id="aa4ee3463dc8e8524ecb860e9694767ff" name="aa4ee3463dc8e8524ecb860e9694767ff"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>dirSetCW</b> ()</td></tr>
+<tr class="memitem:aa4ee3463dc8e8524ecb860e9694767ff" id="r_aa4ee3463dc8e8524ecb860e9694767ff"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa4ee3463dc8e8524ecb860e9694767ff">dirSetCW</a> ()</td></tr>
 <tr class="separator:aa4ee3463dc8e8524ecb860e9694767ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af9128c960dc9f5f3e5eea1514082471c" id="r_af9128c960dc9f5f3e5eea1514082471c"><td class="memItemLeft" align="right" valign="top"><a id="af9128c960dc9f5f3e5eea1514082471c" name="af9128c960dc9f5f3e5eea1514082471c"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>dirSetCCW</b> ()</td></tr>
+<tr class="memitem:af9128c960dc9f5f3e5eea1514082471c" id="r_af9128c960dc9f5f3e5eea1514082471c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af9128c960dc9f5f3e5eea1514082471c">dirSetCCW</a> ()</td></tr>
 <tr class="separator:af9128c960dc9f5f3e5eea1514082471c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aac0fb35800f2170025da3860a9a97ed7" id="r_aac0fb35800f2170025da3860a9a97ed7"><td class="memItemLeft" align="right" valign="top"><a id="aac0fb35800f2170025da3860a9a97ed7" name="aac0fb35800f2170025da3860a9a97ed7"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>isDone</b> ()</td></tr>
+<tr class="memitem:aac0fb35800f2170025da3860a9a97ed7" id="r_aac0fb35800f2170025da3860a9a97ed7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aac0fb35800f2170025da3860a9a97ed7">isDone</a> ()</td></tr>
 <tr class="separator:aac0fb35800f2170025da3860a9a97ed7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a499724404fc071fad2d4a99303342f1b" id="r_a499724404fc071fad2d4a99303342f1b"><td class="memItemLeft" align="right" valign="top"><a id="a499724404fc071fad2d4a99303342f1b" name="a499724404fc071fad2d4a99303342f1b"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setPos</b> (long posDegree, int speed)</td></tr>
+<tr class="memitem:a499724404fc071fad2d4a99303342f1b" id="r_a499724404fc071fad2d4a99303342f1b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a499724404fc071fad2d4a99303342f1b">setPos</a> (long posDegree, int speed)</td></tr>
 <tr class="separator:a499724404fc071fad2d4a99303342f1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8b1c8c840444c43eafaeec873e68babe" id="r_a8b1c8c840444c43eafaeec873e68babe"><td class="memItemLeft" align="right" valign="top"><a id="a8b1c8c840444c43eafaeec873e68babe" name="a8b1c8c840444c43eafaeec873e68babe"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>changePos</b> (long posDegree, int speed)</td></tr>
+<tr class="memitem:a8b1c8c840444c43eafaeec873e68babe" id="r_a8b1c8c840444c43eafaeec873e68babe"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8b1c8c840444c43eafaeec873e68babe">changePos</a> (long posDegree, int speed)</td></tr>
 <tr class="separator:a8b1c8c840444c43eafaeec873e68babe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa1f329152e62727c7d965ab65f871210" id="r_aa1f329152e62727c7d965ab65f871210"><td class="memItemLeft" align="right" valign="top"><a id="aa1f329152e62727c7d965ab65f871210" name="aa1f329152e62727c7d965ab65f871210"></a>
-long&#160;</td><td class="memItemRight" valign="bottom"><b>getCurrentPosition</b> ()</td></tr>
+<tr class="memitem:aa1f329152e62727c7d965ab65f871210" id="r_aa1f329152e62727c7d965ab65f871210"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa1f329152e62727c7d965ab65f871210">getCurrentPosition</a> ()</td></tr>
 <tr class="separator:aa1f329152e62727c7d965ab65f871210"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6366b9e80c3eb1d3fcd4f1d4e0c9396d" id="r_a6366b9e80c3eb1d3fcd4f1d4e0c9396d"><td class="memItemLeft" align="right" valign="top"><a id="a6366b9e80c3eb1d3fcd4f1d4e0c9396d" name="a6366b9e80c3eb1d3fcd4f1d4e0c9396d"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>resetPosition</b> ()</td></tr>
+<tr class="memitem:a6366b9e80c3eb1d3fcd4f1d4e0c9396d" id="r_a6366b9e80c3eb1d3fcd4f1d4e0c9396d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6366b9e80c3eb1d3fcd4f1d4e0c9396d">resetPosition</a> ()</td></tr>
 <tr class="separator:a6366b9e80c3eb1d3fcd4f1d4e0c9396d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac5771b0c4254e77478baeface5a798a9" id="r_ac5771b0c4254e77478baeface5a798a9"><td class="memItemLeft" align="right" valign="top"><a id="ac5771b0c4254e77478baeface5a798a9" name="ac5771b0c4254e77478baeface5a798a9"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setBrake</b> ()</td></tr>
+<tr class="memitem:ac5771b0c4254e77478baeface5a798a9" id="r_ac5771b0c4254e77478baeface5a798a9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac5771b0c4254e77478baeface5a798a9">setBrake</a> ()</td></tr>
 <tr class="separator:ac5771b0c4254e77478baeface5a798a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6be1af39caeebedf37e9d255e7d111ea" id="r_a6be1af39caeebedf37e9d255e7d111ea"><td class="memItemLeft" align="right" valign="top"><a id="a6be1af39caeebedf37e9d255e7d111ea" name="a6be1af39caeebedf37e9d255e7d111ea"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>fullStep</b> ()</td></tr>
+<tr class="memitem:a6be1af39caeebedf37e9d255e7d111ea" id="r_a6be1af39caeebedf37e9d255e7d111ea"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6be1af39caeebedf37e9d255e7d111ea">fullStep</a> ()</td></tr>
 <tr class="separator:a6be1af39caeebedf37e9d255e7d111ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa87a2e9ca46d9729f361515baac423a4" id="r_aa87a2e9ca46d9729f361515baac423a4"><td class="memItemLeft" align="right" valign="top"><a id="aa87a2e9ca46d9729f361515baac423a4" name="aa87a2e9ca46d9729f361515baac423a4"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>incrementPos</b> ()</td></tr>
+<tr class="memitem:aa87a2e9ca46d9729f361515baac423a4" id="r_aa87a2e9ca46d9729f361515baac423a4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa87a2e9ca46d9729f361515baac423a4">incrementPos</a> ()</td></tr>
 <tr class="separator:aa87a2e9ca46d9729f361515baac423a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a10029f9b2e6f0b3a3d480079dac3e822" id="r_a10029f9b2e6f0b3a3d480079dac3e822"><td class="memItemLeft" align="right" valign="top"><a id="a10029f9b2e6f0b3a3d480079dac3e822" name="a10029f9b2e6f0b3a3d480079dac3e822"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>getDir</b> ()</td></tr>
+<tr class="memitem:a10029f9b2e6f0b3a3d480079dac3e822" id="r_a10029f9b2e6f0b3a3d480079dac3e822"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a10029f9b2e6f0b3a3d480079dac3e822">getDir</a> ()</td></tr>
 <tr class="separator:a10029f9b2e6f0b3a3d480079dac3e822"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0a783fcb0bdaeca474c35388b5d0397e" id="r_a0a783fcb0bdaeca474c35388b5d0397e"><td class="memItemLeft" align="right" valign="top"><a id="a0a783fcb0bdaeca474c35388b5d0397e" name="a0a783fcb0bdaeca474c35388b5d0397e"></a>
-stepperStates&#160;</td><td class="memItemRight" valign="bottom"><b>getState</b> ()</td></tr>
+<tr class="memitem:a0a783fcb0bdaeca474c35388b5d0397e" id="r_a0a783fcb0bdaeca474c35388b5d0397e"><td class="memItemLeft" align="right" valign="top">stepperStates&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0a783fcb0bdaeca474c35388b5d0397e">getState</a> ()</td></tr>
 <tr class="separator:a0a783fcb0bdaeca474c35388b5d0397e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4bb19f2aee0f91e631d07acc679abc0c" id="r_a4bb19f2aee0f91e631d07acc679abc0c"><td class="memItemLeft" align="right" valign="top"><a id="a4bb19f2aee0f91e631d07acc679abc0c" name="a4bb19f2aee0f91e631d07acc679abc0c"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setAcceleration</b> (long accelVal)</td></tr>
+<tr class="memitem:a4bb19f2aee0f91e631d07acc679abc0c" id="r_a4bb19f2aee0f91e631d07acc679abc0c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4bb19f2aee0f91e631d07acc679abc0c">setAcceleration</a> (long accelVal)</td></tr>
 <tr class="separator:a4bb19f2aee0f91e631d07acc679abc0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0117275cc68737791decd44af0d09549" id="r_a0117275cc68737791decd44af0d09549"><td class="memItemLeft" align="right" valign="top"><a id="a0117275cc68737791decd44af0d09549" name="a0117275cc68737791decd44af0d09549"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setDeceleration</b> (long decelVal)</td></tr>
+<tr class="memitem:a0117275cc68737791decd44af0d09549" id="r_a0117275cc68737791decd44af0d09549"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0117275cc68737791decd44af0d09549">setDeceleration</a> (long decelVal)</td></tr>
 <tr class="separator:a0117275cc68737791decd44af0d09549"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaf1d6261637a1c594a41be373078f95e" id="r_aaf1d6261637a1c594a41be373078f95e"><td class="memItemLeft" align="right" valign="top"><a id="aaf1d6261637a1c594a41be373078f95e" name="aaf1d6261637a1c594a41be373078f95e"></a>
-long&#160;</td><td class="memItemRight" valign="bottom"><b>getAcceleration</b> ()</td></tr>
+<tr class="memitem:aaf1d6261637a1c594a41be373078f95e" id="r_aaf1d6261637a1c594a41be373078f95e"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaf1d6261637a1c594a41be373078f95e">getAcceleration</a> ()</td></tr>
 <tr class="separator:aaf1d6261637a1c594a41be373078f95e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a20f896f21671fc81a8098c042ca92e4d" id="r_a20f896f21671fc81a8098c042ca92e4d"><td class="memItemLeft" align="right" valign="top"><a id="a20f896f21671fc81a8098c042ca92e4d" name="a20f896f21671fc81a8098c042ca92e4d"></a>
-long&#160;</td><td class="memItemRight" valign="bottom"><b>getDeceleration</b> ()</td></tr>
+<tr class="memitem:a20f896f21671fc81a8098c042ca92e4d" id="r_a20f896f21671fc81a8098c042ca92e4d"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a20f896f21671fc81a8098c042ca92e4d">getDeceleration</a> ()</td></tr>
 <tr class="separator:a20f896f21671fc81a8098c042ca92e4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae87ca4795c3fc2032b7c9c4da57da448" id="r_ae87ca4795c3fc2032b7c9c4da57da448"><td class="memItemLeft" align="right" valign="top"><a id="ae87ca4795c3fc2032b7c9c4da57da448" name="ae87ca4795c3fc2032b7c9c4da57da448"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>calculateMoveProfile</b> ()</td></tr>
+<tr class="memitem:ae87ca4795c3fc2032b7c9c4da57da448" id="r_ae87ca4795c3fc2032b7c9c4da57da448"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae87ca4795c3fc2032b7c9c4da57da448">calculateMoveProfile</a> ()</td></tr>
 <tr class="separator:ae87ca4795c3fc2032b7c9c4da57da448"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a920b1b9041499d1e4b732d698725baff" id="r_a920b1b9041499d1e4b732d698725baff"><td class="memItemLeft" align="right" valign="top"><a id="a920b1b9041499d1e4b732d698725baff" name="a920b1b9041499d1e4b732d698725baff"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>getAccelSteps</b> ()</td></tr>
+<tr class="memitem:a920b1b9041499d1e4b732d698725baff" id="r_a920b1b9041499d1e4b732d698725baff"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a920b1b9041499d1e4b732d698725baff">getAccelSteps</a> ()</td></tr>
 <tr class="separator:a920b1b9041499d1e4b732d698725baff"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8fc4655e2e3d50cbfb2e1b1b00aac234" id="r_a8fc4655e2e3d50cbfb2e1b1b00aac234"><td class="memItemLeft" align="right" valign="top"><a id="a8fc4655e2e3d50cbfb2e1b1b00aac234" name="a8fc4655e2e3d50cbfb2e1b1b00aac234"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>getDecelSteps</b> ()</td></tr>
+<tr class="memitem:a8fc4655e2e3d50cbfb2e1b1b00aac234" id="r_a8fc4655e2e3d50cbfb2e1b1b00aac234"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8fc4655e2e3d50cbfb2e1b1b00aac234">getDecelSteps</a> ()</td></tr>
 <tr class="separator:a8fc4655e2e3d50cbfb2e1b1b00aac234"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a645a95f0f7b7bd55ccf37a83a532d185" id="r_a645a95f0f7b7bd55ccf37a83a532d185"><td class="memItemLeft" align="right" valign="top"><a id="a645a95f0f7b7bd55ccf37a83a532d185" name="a645a95f0f7b7bd55ccf37a83a532d185"></a>
-long&#160;</td><td class="memItemRight" valign="bottom"><b>calculateNextStep</b> ()</td></tr>
+<tr class="memitem:a645a95f0f7b7bd55ccf37a83a532d185" id="r_a645a95f0f7b7bd55ccf37a83a532d185"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a645a95f0f7b7bd55ccf37a83a532d185">calculateNextStep</a> ()</td></tr>
 <tr class="separator:a645a95f0f7b7bd55ccf37a83a532d185"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4260ec60dfd690576e6c8c44a15d1c5d" id="r_a4260ec60dfd690576e6c8c44a15d1c5d"><td class="memItemLeft" align="right" valign="top"><a id="a4260ec60dfd690576e6c8c44a15d1c5d" name="a4260ec60dfd690576e6c8c44a15d1c5d"></a>
-long&#160;</td><td class="memItemRight" valign="bottom"><b>getRemainingSteps</b> ()</td></tr>
+<tr class="memitem:a4260ec60dfd690576e6c8c44a15d1c5d" id="r_a4260ec60dfd690576e6c8c44a15d1c5d"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4260ec60dfd690576e6c8c44a15d1c5d">getRemainingSteps</a> ()</td></tr>
 <tr class="separator:a4260ec60dfd690576e6c8c44a15d1c5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a795e4fa5bfc7e4ba397ce434caf0d9c8" id="r_a795e4fa5bfc7e4ba397ce434caf0d9c8"><td class="memItemLeft" align="right" valign="top"><a id="a795e4fa5bfc7e4ba397ce434caf0d9c8" name="a795e4fa5bfc7e4ba397ce434caf0d9c8"></a>
-long&#160;</td><td class="memItemRight" valign="bottom"><b>getTimeToNext</b> ()</td></tr>
+<tr class="memitem:a795e4fa5bfc7e4ba397ce434caf0d9c8" id="r_a795e4fa5bfc7e4ba397ce434caf0d9c8"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a795e4fa5bfc7e4ba397ce434caf0d9c8">getTimeToNext</a> ()</td></tr>
 <tr class="separator:a795e4fa5bfc7e4ba397ce434caf0d9c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Contains functions to control a stepper motor using a DRV8825. Enables step planning for target speed, position, accel, and decel values </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="ae87ca4795c3fc2032b7c9c4da57da448" name="ae87ca4795c3fc2032b7c9c4da57da448"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae87ca4795c3fc2032b7c9c4da57da448">&#9670;&#160;</a></span>calculateMoveProfile()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void StepperDriver::calculateMoveProfile </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Perform initial calculations for the motor movement controller </p>
+
+</div>
+</div>
+<a id="a645a95f0f7b7bd55ccf37a83a532d185" name="a645a95f0f7b7bd55ccf37a83a532d185"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a645a95f0f7b7bd55ccf37a83a532d185">&#9670;&#160;</a></span>calculateNextStep()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">long StepperDriver::calculateNextStep </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Perform the next step calculation for the motor movement controller </p>
+
+</div>
+</div>
+<a id="a8b1c8c840444c43eafaeec873e68babe" name="a8b1c8c840444c43eafaeec873e68babe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8b1c8c840444c43eafaeec873e68babe">&#9670;&#160;</a></span>changePos()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void StepperDriver::changePos </td>
+          <td>(</td>
+          <td class="paramtype">long</td>          <td class="paramname"><span class="paramname"><em>posDegree</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>speed</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Sets the target position to calculate the movement profile based on </p>
+
+</div>
+</div>
+<a id="af9128c960dc9f5f3e5eea1514082471c" name="af9128c960dc9f5f3e5eea1514082471c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af9128c960dc9f5f3e5eea1514082471c">&#9670;&#160;</a></span>dirSetCCW()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void StepperDriver::dirSetCCW </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Sets stepper direction to counterclockwise </p>
+
+</div>
+</div>
+<a id="aa4ee3463dc8e8524ecb860e9694767ff" name="aa4ee3463dc8e8524ecb860e9694767ff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa4ee3463dc8e8524ecb860e9694767ff">&#9670;&#160;</a></span>dirSetCW()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void StepperDriver::dirSetCW </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Sets stepper direction to clockwise </p>
+
+</div>
+</div>
+<a id="a658104e1cdc5c62745156c92607cfb80" name="a658104e1cdc5c62745156c92607cfb80"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a658104e1cdc5c62745156c92607cfb80">&#9670;&#160;</a></span>disableStepper()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void StepperDriver::disableStepper </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Disables stepper driver </p>
+
+</div>
+</div>
+<a id="aa86dc72e34e6a566df09a4e142cf54e8" name="aa86dc72e34e6a566df09a4e142cf54e8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa86dc72e34e6a566df09a4e142cf54e8">&#9670;&#160;</a></span>enableStepper()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void StepperDriver::enableStepper </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Enables stepper driver </p>
+
+</div>
+</div>
+<a id="a6be1af39caeebedf37e9d255e7d111ea" name="a6be1af39caeebedf37e9d255e7d111ea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6be1af39caeebedf37e9d255e7d111ea">&#9670;&#160;</a></span>fullStep()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void StepperDriver::fullStep </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Makes a full step of the motor </p>
+
+</div>
+</div>
+<a id="aaf1d6261637a1c594a41be373078f95e" name="aaf1d6261637a1c594a41be373078f95e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaf1d6261637a1c594a41be373078f95e">&#9670;&#160;</a></span>getAcceleration()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">long StepperDriver::getAcceleration </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Get the current target acceleration value of the motor </p>
+
+</div>
+</div>
+<a id="a920b1b9041499d1e4b732d698725baff" name="a920b1b9041499d1e4b732d698725baff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a920b1b9041499d1e4b732d698725baff">&#9670;&#160;</a></span>getAccelSteps()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int StepperDriver::getAccelSteps </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Returns the number of steps of planned acceleration </p>
+
+</div>
+</div>
+<a id="aa1f329152e62727c7d965ab65f871210" name="aa1f329152e62727c7d965ab65f871210"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa1f329152e62727c7d965ab65f871210">&#9670;&#160;</a></span>getCurrentPosition()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">long StepperDriver::getCurrentPosition </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Gets current motor position in degrees </p>
+
+</div>
+</div>
+<a id="a20f896f21671fc81a8098c042ca92e4d" name="a20f896f21671fc81a8098c042ca92e4d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a20f896f21671fc81a8098c042ca92e4d">&#9670;&#160;</a></span>getDeceleration()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">long StepperDriver::getDeceleration </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Get the current target decelerartion value of the motor </p>
+
+</div>
+</div>
+<a id="a8fc4655e2e3d50cbfb2e1b1b00aac234" name="a8fc4655e2e3d50cbfb2e1b1b00aac234"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8fc4655e2e3d50cbfb2e1b1b00aac234">&#9670;&#160;</a></span>getDecelSteps()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int StepperDriver::getDecelSteps </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Returns the number of steps of planned deceleration </p>
+
+</div>
+</div>
+<a id="a10029f9b2e6f0b3a3d480079dac3e822" name="a10029f9b2e6f0b3a3d480079dac3e822"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a10029f9b2e6f0b3a3d480079dac3e822">&#9670;&#160;</a></span>getDir()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int StepperDriver::getDir </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Gets the current direction of the motor </p>
+
+</div>
+</div>
+<a id="a4260ec60dfd690576e6c8c44a15d1c5d" name="a4260ec60dfd690576e6c8c44a15d1c5d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4260ec60dfd690576e6c8c44a15d1c5d">&#9670;&#160;</a></span>getRemainingSteps()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">long StepperDriver::getRemainingSteps </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Returns the number of steps left in the current movement profile </p>
+
+</div>
+</div>
+<a id="a0a783fcb0bdaeca474c35388b5d0397e" name="a0a783fcb0bdaeca474c35388b5d0397e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0a783fcb0bdaeca474c35388b5d0397e">&#9670;&#160;</a></span>getState()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">stepperStates StepperDriver::getState </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Gets the current state of the motor </p>
+
+</div>
+</div>
+<a id="a795e4fa5bfc7e4ba397ce434caf0d9c8" name="a795e4fa5bfc7e4ba397ce434caf0d9c8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a795e4fa5bfc7e4ba397ce434caf0d9c8">&#9670;&#160;</a></span>getTimeToNext()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">long StepperDriver::getTimeToNext </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Returns the time to next step in microseconds </p>
+
+</div>
+</div>
+<a id="aa87a2e9ca46d9729f361515baac423a4" name="aa87a2e9ca46d9729f361515baac423a4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa87a2e9ca46d9729f361515baac423a4">&#9670;&#160;</a></span>incrementPos()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void StepperDriver::incrementPos </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Increase the position by one step </p>
+
+</div>
+</div>
+<a id="aac0fb35800f2170025da3860a9a97ed7" name="aac0fb35800f2170025da3860a9a97ed7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aac0fb35800f2170025da3860a9a97ed7">&#9670;&#160;</a></span>isDone()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool StepperDriver::isDone </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Returns if requested stepper motion is complete </p>
+
+</div>
+</div>
+<a id="ac4b2664e1b3b394c4092a1dc07871c91" name="ac4b2664e1b3b394c4092a1dc07871c91"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac4b2664e1b3b394c4092a1dc07871c91">&#9670;&#160;</a></span>pulsesPerSecond()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int StepperDriver::pulsesPerSecond </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>speed</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Function to get pulses per second from RPM </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">speed</td><td>Speed in DEG/s to convert </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a6366b9e80c3eb1d3fcd4f1d4e0c9396d" name="a6366b9e80c3eb1d3fcd4f1d4e0c9396d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6366b9e80c3eb1d3fcd4f1d4e0c9396d">&#9670;&#160;</a></span>resetPosition()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void StepperDriver::resetPosition </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Resets the accumulated motor position </p>
+
+</div>
+</div>
+<a id="a4bb19f2aee0f91e631d07acc679abc0c" name="a4bb19f2aee0f91e631d07acc679abc0c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4bb19f2aee0f91e631d07acc679abc0c">&#9670;&#160;</a></span>setAcceleration()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void StepperDriver::setAcceleration </td>
+          <td>(</td>
+          <td class="paramtype">long</td>          <td class="paramname"><span class="paramname"><em>accelVal</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Set the acceleration value of the motor deg/s^2 </p>
+
+</div>
+</div>
+<a id="ac5771b0c4254e77478baeface5a798a9" name="ac5771b0c4254e77478baeface5a798a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac5771b0c4254e77478baeface5a798a9">&#9670;&#160;</a></span>setBrake()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void StepperDriver::setBrake </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Sets the motor to break mode (no stepping but enabled) </p>
+
+</div>
+</div>
+<a id="a0117275cc68737791decd44af0d09549" name="a0117275cc68737791decd44af0d09549"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0117275cc68737791decd44af0d09549">&#9670;&#160;</a></span>setDeceleration()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void StepperDriver::setDeceleration </td>
+          <td>(</td>
+          <td class="paramtype">long</td>          <td class="paramname"><span class="paramname"><em>decelVal</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Set the deceleration value of the motor deg/s^2 </p>
+
+</div>
+</div>
+<a id="a499724404fc071fad2d4a99303342f1b" name="a499724404fc071fad2d4a99303342f1b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a499724404fc071fad2d4a99303342f1b">&#9670;&#160;</a></span>setPos()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void StepperDriver::setPos </td>
+          <td>(</td>
+          <td class="paramtype">long</td>          <td class="paramname"><span class="paramname"><em>posDegree</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>speed</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Sets the target position to calculate the movement profile based on </p>
+
+</div>
+</div>
+<a id="ac05ee38ee323a507dab6cf40d46c19a1" name="ac05ee38ee323a507dab6cf40d46c19a1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac05ee38ee323a507dab6cf40d46c19a1">&#9670;&#160;</a></span>setStepperSpeed()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void StepperDriver::setStepperSpeed </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>speed</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Function to control stepper speed </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">speed</td><td>Speed in DEG/s to set the motor to </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a947690e3c97645cf66ed813b03798197" name="a947690e3c97645cf66ed813b03798197"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a947690e3c97645cf66ed813b03798197">&#9670;&#160;</a></span>setupStepper()</h2>
 
@@ -211,6 +673,59 @@ long&#160;</td><td class="memItemRight" valign="bottom"><b>getTimeToNext</b> ()<
 <p>Stepper driver setup function </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">microsteps</td><td>Current microstepping mode in 1/microsteps </td></tr>
+    <tr><td class="paramname">stepPerRev</td><td>The number of physical steps per revolution of the stepper </td></tr>
+    <tr><td class="paramname">stepPin</td><td>The pin number corresponding to the STEP pin on the DRV8825 </td></tr>
+    <tr><td class="paramname">dirPin</td><td>The pin number corresponding to the DIR pin on the DRV8825 </td></tr>
+    <tr><td class="paramname">M1</td><td>The pin number corresponding to the M1 pin on the DRV8825 </td></tr>
+    <tr><td class="paramname">M2</td><td>The pin number corresponding to the M2 pin on the DRV8825 </td></tr>
+    <tr><td class="paramname">M3</td><td>The pin number corresponding to the M3 pin on the DRV8825 </td></tr>
+    <tr><td class="paramname">enablePin</td><td>The pin number corresponding to the EN pin on the DRV8825 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a95d7552817921a7254571afda99629e3" name="a95d7552817921a7254571afda99629e3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a95d7552817921a7254571afda99629e3">&#9670;&#160;</a></span>stepMicros()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int StepperDriver::stepMicros </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>speed</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Function to get microseconds per step </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">speed</td><td>Speed in STEP/sec </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ae8e516f7455003bd94b02f137185950c" name="ae8e516f7455003bd94b02f137185950c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae8e516f7455003bd94b02f137185950c">&#9670;&#160;</a></span>updateStepperSpeed()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void StepperDriver::updateStepperSpeed </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>speed</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Function to update stepper speed </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">speed</td><td>Speed in DEG/s to update the motor to </td></tr>
   </table>
   </dd>
 </dl>

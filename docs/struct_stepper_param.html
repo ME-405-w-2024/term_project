@@ -69,44 +69,59 @@ $(function(){initNavTree('struct_stepper_param.html',''); initResizable(); });
   <div class="headertitle"><div class="title">StepperParam Struct Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="_stepper_functions_8h_source.html">StepperFunctions.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a1371ef89deabed5c1257e46f8b9b813a" id="r_a1371ef89deabed5c1257e46f8b9b813a"><td class="memItemLeft" align="right" valign="top"><a id="a1371ef89deabed5c1257e46f8b9b813a" name="a1371ef89deabed5c1257e46f8b9b813a"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>microSteps</b></td></tr>
+<tr class="memdesc:a1371ef89deabed5c1257e46f8b9b813a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Current microstepping mode in 1/microsteps. <br /></td></tr>
 <tr class="separator:a1371ef89deabed5c1257e46f8b9b813a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a238fa5ab4f240ca0f981b54865abfa3c" id="r_a238fa5ab4f240ca0f981b54865abfa3c"><td class="memItemLeft" align="right" valign="top"><a id="a238fa5ab4f240ca0f981b54865abfa3c" name="a238fa5ab4f240ca0f981b54865abfa3c"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>pulsesPerRev</b></td></tr>
+<tr class="memdesc:a238fa5ab4f240ca0f981b54865abfa3c"><td class="mdescLeft">&#160;</td><td class="mdescRight">The number of physical steps per revolution of the stepper. <br /></td></tr>
 <tr class="separator:a238fa5ab4f240ca0f981b54865abfa3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a44dcfd260b386cf0e6fa2909326e423e" id="r_a44dcfd260b386cf0e6fa2909326e423e"><td class="memItemLeft" align="right" valign="top"><a id="a44dcfd260b386cf0e6fa2909326e423e" name="a44dcfd260b386cf0e6fa2909326e423e"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>stepperDirection</b></td></tr>
+<tr class="memdesc:a44dcfd260b386cf0e6fa2909326e423e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Direction to move the stepper motor in. <br /></td></tr>
 <tr class="separator:a44dcfd260b386cf0e6fa2909326e423e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa1e982fbf8979c32ead723825a6d6128" id="r_aa1e982fbf8979c32ead723825a6d6128"><td class="memItemLeft" align="right" valign="top"><a id="aa1e982fbf8979c32ead723825a6d6128" name="aa1e982fbf8979c32ead723825a6d6128"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>stepperStepPin</b></td></tr>
+<tr class="memdesc:aa1e982fbf8979c32ead723825a6d6128"><td class="mdescLeft">&#160;</td><td class="mdescRight">The pin number corresponding to the STEP pin on the DRV8825 for this motor. <br /></td></tr>
 <tr class="separator:aa1e982fbf8979c32ead723825a6d6128"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a35a3ceba015744fe2be6feb61f1808b8" id="r_a35a3ceba015744fe2be6feb61f1808b8"><td class="memItemLeft" align="right" valign="top"><a id="a35a3ceba015744fe2be6feb61f1808b8" name="a35a3ceba015744fe2be6feb61f1808b8"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>stepperDirPin</b></td></tr>
+<tr class="memdesc:a35a3ceba015744fe2be6feb61f1808b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">The pin number corresponding to the DIR pin on the DRV8825 for this motor. <br /></td></tr>
 <tr class="separator:a35a3ceba015744fe2be6feb61f1808b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3ab0095a5405eec7ba72baf841f0b0ee" id="r_a3ab0095a5405eec7ba72baf841f0b0ee"><td class="memItemLeft" align="right" valign="top"><a id="a3ab0095a5405eec7ba72baf841f0b0ee" name="a3ab0095a5405eec7ba72baf841f0b0ee"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>stepperM1</b></td></tr>
+<tr class="memdesc:a3ab0095a5405eec7ba72baf841f0b0ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">The pin number corresponding to the M1 pin on the DRV8825 for this motor. <br /></td></tr>
 <tr class="separator:a3ab0095a5405eec7ba72baf841f0b0ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6ac87502ef1fc31c018cd19b5f5ec163" id="r_a6ac87502ef1fc31c018cd19b5f5ec163"><td class="memItemLeft" align="right" valign="top"><a id="a6ac87502ef1fc31c018cd19b5f5ec163" name="a6ac87502ef1fc31c018cd19b5f5ec163"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>stepperM2</b></td></tr>
+<tr class="memdesc:a6ac87502ef1fc31c018cd19b5f5ec163"><td class="mdescLeft">&#160;</td><td class="mdescRight">The pin number corresponding to the M2 pin on the DRV8825 for this motor. <br /></td></tr>
 <tr class="separator:a6ac87502ef1fc31c018cd19b5f5ec163"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7c4d8487d2d7b763fa7df7822cd9a438" id="r_a7c4d8487d2d7b763fa7df7822cd9a438"><td class="memItemLeft" align="right" valign="top"><a id="a7c4d8487d2d7b763fa7df7822cd9a438" name="a7c4d8487d2d7b763fa7df7822cd9a438"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>stepperM3</b></td></tr>
+<tr class="memdesc:a7c4d8487d2d7b763fa7df7822cd9a438"><td class="mdescLeft">&#160;</td><td class="mdescRight">The pin number corresponding to the M3 pin on the DRV8825 for this motor. <br /></td></tr>
 <tr class="separator:a7c4d8487d2d7b763fa7df7822cd9a438"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a73681482f87ffbc4e94f356337bb6202" id="r_a73681482f87ffbc4e94f356337bb6202"><td class="memItemLeft" align="right" valign="top"><a id="a73681482f87ffbc4e94f356337bb6202" name="a73681482f87ffbc4e94f356337bb6202"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>stepperEnablePin</b></td></tr>
+<tr class="memdesc:a73681482f87ffbc4e94f356337bb6202"><td class="mdescLeft">&#160;</td><td class="mdescRight">The pin number corresponding to the EN pin on the DRV8825 for this motor. <br /></td></tr>
 <tr class="separator:a73681482f87ffbc4e94f356337bb6202"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aacc89bc6e1d3a930e16112d485745351" id="r_aacc89bc6e1d3a930e16112d485745351"><td class="memItemLeft" align="right" valign="top"><a id="aacc89bc6e1d3a930e16112d485745351" name="aacc89bc6e1d3a930e16112d485745351"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>acceleration</b></td></tr>
+<tr class="memdesc:aacc89bc6e1d3a930e16112d485745351"><td class="mdescLeft">&#160;</td><td class="mdescRight">The target acceleration for this motor in deg/sec^2. <br /></td></tr>
 <tr class="separator:aacc89bc6e1d3a930e16112d485745351"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a575403e486a44398890f039cbca53f7f" id="r_a575403e486a44398890f039cbca53f7f"><td class="memItemLeft" align="right" valign="top"><a id="a575403e486a44398890f039cbca53f7f" name="a575403e486a44398890f039cbca53f7f"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>deceleration</b></td></tr>
+<tr class="memdesc:a575403e486a44398890f039cbca53f7f"><td class="mdescLeft">&#160;</td><td class="mdescRight">The target deceleration for this motor in deg/sec^2. <br /></td></tr>
 <tr class="separator:a575403e486a44398890f039cbca53f7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<hr/>The documentation for this struct was generated from the following file:<ul>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Struct containing the necessary attributes of a stepper controller </p>
+</div><hr/>The documentation for this struct was generated from the following file:<ul>
 <li>RemoteStepper/<a class="el" href="_stepper_functions_8h_source.html">StepperFunctions.h</a></li>
 </ul>
 </div><!-- contents -->

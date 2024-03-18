@@ -10,5 +10,5 @@ var annotated_dup =
       [ "ThCamCalc", "classthermal__cam__processing_1_1_th_cam_calc.html", null ]
     ] ],
     [ "StepperDriver", "class_stepper_driver.html", "class_stepper_driver" ],
-    [ "StepperParam", "struct_stepper_param.html", null ]
+    [ "StepperParam", "struct_stepper_param.html", "struct_stepper_param" ]
 ];

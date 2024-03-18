@@ -8,25 +8,41 @@
 
 //#define DEBUG
 
+/*!Struct containing the necessary attributes of a stepper controller
+*/
 struct StepperParam{
-
-	int microSteps;
-    int pulsesPerRev;
-    int stepperDirection;
-    int stepperStepPin;
+	
+	//!Current microstepping mode in 1/microsteps
+	int microSteps; 
+	//!The number of physical steps per revolution of the stepper
+    int pulsesPerRev; 
+	//!Direction to move the stepper motor in
+    int stepperDirection; 
+	//!The pin number corresponding to the STEP pin on the DRV8825 for this motor
+    int stepperStepPin; 
+	//!The pin number corresponding to the DIR pin on the DRV8825 for this motor
     int stepperDirPin;
-    int stepperM1;
-    int stepperM2;
-    int stepperM3;
-    int stepperEnablePin;
-    int acceleration;
-    int deceleration;
+	//!The pin number corresponding to the M1 pin on the DRV8825 for this motor
+    int stepperM1; 
+	//!The pin number corresponding to the M2 pin on the DRV8825 for this motor
+    int stepperM2; 
+	//!The pin number corresponding to the M3 pin on the DRV8825 for this motor
+    int stepperM3; 
+	//!The pin number corresponding to the EN pin on the DRV8825 for this motor
+    int stepperEnablePin; 
+	//!The target acceleration for this motor in deg/sec^2
+    int acceleration; 
+	//!The target deceleration for this motor in deg/sec^2
+    int deceleration; 
 
 
 };
 
 enum stepperStates {STOP, ACCELERATE, DECELERATE, CRUISE, ERROR};
 
+/*!Contains functions to control a stepper motor using a DRV8825.
+Enables step planning for target speed, position, accel, and decel values
+*/
 class StepperDriver{
 	private:
 
@@ -77,37 +93,132 @@ class StepperDriver{
 	public:
 		StepperDriver();
 		/*!
-		Stepper driver setup function
+			Stepper driver setup function
 			@param microsteps Current microstepping mode in 1/microsteps
+			@param stepPerRev The number of physical steps per revolution of the stepper
+			@param stepPin The pin number corresponding to the STEP pin on the DRV8825
+			@param dirPin The pin number corresponding to the DIR pin on the DRV8825
+			@param M1 The pin number corresponding to the M1 pin on the DRV8825
+			@param M2 The pin number corresponding to the M2 pin on the DRV8825
+			@param M3 The pin number corresponding to the M3 pin on the DRV8825
+			@param enablePin The pin number corresponding to the EN pin on the DRV8825
 		*/
 		void setupStepper(int microsteps, int stepPerRev, int stepPin, int dirPin, int M1, int M2, int M3, int enablePin);
+		/*!
+			Function to control stepper speed
+			@param speed Speed in DEG/s to set the motor to
+		*/
 		void setStepperSpeed(int speed);
+		/*!
+			Function to update stepper speed
+			@param speed Speed in DEG/s to update the motor to
+		*/
 		void updateStepperSpeed(int speed);
+		/*!
+			Function to get pulses per second from RPM
+			@param speed Speed in DEG/s to convert
+		*/
 		int pulsesPerSecond(int speed);
+		/*!
+			Function to get microseconds per step
+			@param speed Speed in STEP/sec
+		*/
 		int stepMicros(int speed);
+		/*!
+			Enables stepper driver
+		*/
 		void enableStepper();
+		/*!
+			Disables stepper driver
+		*/
 		void disableStepper();
+		/*!
+			Sets stepper direction to clockwise
+		*/
 		void dirSetCW();
+		/*!
+			Sets stepper direction to counterclockwise
+		*/
 		void dirSetCCW();
+		/*!
+			Returns if requested stepper motion is complete
+		*/
 		bool isDone();
+		/*!
+			Sets the target position to calculate the movement profile based on
+		*/
 		void setPos(long posDegree, int speed);
+		/*!
+			Sets the target position to calculate the movement profile based on
+		*/
 		void changePos(long posDegree, int speed);
+		/*!
+			Gets current motor position in degrees
+		*/
 		long getCurrentPosition();
+		/*!
+			Resets the accumulated motor position
+		*/
 		void resetPosition();
+		/*!
+			Sets the motor to break mode (no stepping but enabled)
+		*/
 		void setBrake();
+		/*!
+			Makes a full step of the motor
+		*/
 		void fullStep();
+		/*!
+			Increase the position by one step
+		*/
 		void incrementPos();
+		/*!
+			Gets the current direction of the motor
+		*/
 		int getDir();
+		/*!
+			Gets the current state of the motor
+		*/
 		stepperStates getState();
+		/*!
+			Set the acceleration value of the motor deg/s^2
+		*/
     	void setAcceleration(long accelVal);
+		/*!
+			Set the deceleration value of the motor deg/s^2
+		*/
     	void setDeceleration(long decelVal);
+		/*!
+			Get the current target acceleration value of the motor
+		*/
     	long getAcceleration();
+		/*!
+			Get the current target decelerartion value of the motor
+		*/
     	long getDeceleration();
+		/*!
+			Perform initial calculations for the motor movement controller
+		*/
     	void calculateMoveProfile();
+		/*!
+			Returns the number of steps of planned acceleration
+		*/
     	int getAccelSteps();
+		/*!
+			Returns the number of steps of planned deceleration
+		*/
     	int getDecelSteps();
+		/*!
+			Perform the next step calculation for the motor movement controller
+		*/
     	long calculateNextStep();
+		/*!
+			Returns the number of steps left in the current movement profile
+		*/
     	long getRemainingSteps();
+		/*!
+			Returns the time to next step in microseconds
+		*/
     	long getTimeToNext();
 
 
