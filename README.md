@@ -30,6 +30,9 @@ CAD images:
 ## Software Design
 Fill in later.
 
+## Electrical Design
+![schematic](https://github.com/ME-405-w-2024/term_project/blob/main/media/ElecDiagram.png)
+
 ## Results
 The system was tested in multiple stages as mechanical hardware and the respective code implementations were completed. Almost all of the mechanical hardware was 3D printed before final implementation.
 
