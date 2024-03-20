@@ -41,3 +41,5 @@ This system relies heavily on accurate timing and low calculation overhead in or
 The remote board (containing its own stepper driving hardware, the arduino, and power conversion) was communicated with via I2C, and given information of requested position, motor speed and motor accelerations. All other calculation was handled by the microcontroller on the arduino, freeing up significant time on the STM32.
 
 ## State Diagram
+
+![State Diagram](https://github.com/ME-405-w-2024/term_project/blob/main/media/StateDiagram.png)
