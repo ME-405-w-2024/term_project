@@ -42,4 +42,4 @@ The remote board (containing its own stepper driving hardware, the arduino, and 
 
 ## State Diagram
 
-![State Diagram](https://github.com/ME-405-w-2024/term_project/blob/main/media/StateDiagram.png)
+![State Diagram](https://github.com/ME-405-w-2024/term_project/blob/main/media/StateDiagram.png?raw=true)
