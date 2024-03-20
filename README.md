@@ -28,7 +28,7 @@ CAD images:
 ![completed project](https://github.com/ME-405-w-2024/term_project/blob/main/media/CompletedProject.png)
 
 ## Software Design
-Fill in later.
+***Fill in later.***
 
 ## Electrical Design
 ![schematic](https://github.com/ME-405-w-2024/term_project/blob/main/media/ElecDiagram.png)
@@ -36,13 +36,11 @@ Fill in later.
 ## Results
 The system was tested in multiple stages as mechanical hardware and the respective code implementations were completed. Almost all of the mechanical hardware was 3D printed before final implementation.
 
->shooting
+Shooting for this system was moderately successful. Our biggest issues were motor power consumption, shaft misalignment, and belt tension. Shooting performance was heavily dependent on available power supplied to the shooting motor and on ball compression, which was a function of shaft alignment and shooter wheel size. Shooting was tested off of the main pivot mechanism. Due to the speed of wheel rotation, belt tension was essential to ensuring functionality. 3D printed bearing mounts and mounting plates were iterated multiple times before the final design. 
 
-Shooting was tested off of the main pivot mechanism. Due to the speed of wheel rotation, belt tension was essential to ensuring functionality. 3D printed bearing mounts and mounting plates were iterated multiple times before the final design. 
+Turning the shooter with a stepper motor proved to be challenging but successful. Mechanical design was fairly simple and integration was a matter of ensuring proper belt tension. Significant design work was put into the project to minimize rotational inertia, allowing for fast stepper accelerations. The turning system was tested using a routine of a few set angles, input angles were given to the system and performance was measured. 
 
-> main pivot mech?
-
-> code / stepper discussion
+Unfortunately the system did not perform flawlessly in competition. Much of the failure in competition was due to relatively low-complexity thermal data processing. A simple filter was implemented to attempt to pick up only significant hot-spots in thermal data, which proved to be a flawed approach and was heavily dependent on outside factors such as more than a single individual in view of the camera. We also used a USB cable to extend the I2C bus to the thermal camera, which meant that SCL and SDA lines were twisted, introducing more noise into the system.
 
 ## Lessons Learned
 Implementation of a custom shooting mechanism proved to be quite challenging indeed. Much of the hardware was iterated at least 3 separate times before being deemed successful. 
@@ -51,4 +49,6 @@ The servo-based feed mechanism was remarkably successful due to the prevalence o
 
 Shaft alignment, concentricity, and belt tension proved the most challenging aspects of mechanical design. Proper belt tension provisions must be taken and rotating components should fit as tight as possible to any shafts to prevent excess losses. 
 
-> stepper discussion
+Ultimately, system integration proved to be the biggest challenge for this project. Each of the individual mechanical subsystems proved successful independently, but integration with the final thermal camera was the downfall of performance. More time should have been put into thermal camera data processing to accurately determine the centroid of heat for proper targeting, and less time should have been spent on mechanical hardware design. It did look cool, though. 
+
+We recommend that this project is not recreated for similar competitions without significantly more time invested into entire system performance analysis. While the turning and shooting mechanisms proved interesting to design and program, the project did not perform better than a simple Nerf gun and required significantly more overhead for design and testing to even acquire baseline functionality. 

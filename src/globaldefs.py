@@ -1,4 +1,8 @@
 """! @file globaldefs.py
+
+Serves as an outline of constants that are used multiple times throughout the code.
+Pin definitions for GPIO are defined here to provide a central source of truth. 
+
 """  
 
 import pyb

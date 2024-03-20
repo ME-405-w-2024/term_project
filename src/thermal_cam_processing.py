@@ -1,15 +1,24 @@
 """! @file thermal_cam_processing.py
+
+Contains a class to perform relevant math operations to determine the centroid of thermal data.
+This code is reliant on mlx_cam.py, which was provided as a driver for the thermal camera.
+
 """  
 
-# what do we want:
-# input: camera obj
-# output: angle to turn to
 import math
 
 class ThCamCalc:
 
     def __init__(self, DIST_CAM, DIST_SHOOTER, FOV_ANG, NUM_PIXELS):
 
+        """!
+            Creates a "calculator" object, setting up relevant distances and camera specifications.
+            Assumes that the camera and shooter are aligned in the "y" plane.
+            @param DIST_CAM Distance to the plane of the target to the camera.
+            @param DIST_SHOOTER Distance to the plane of the target to the shooter pivot point.
+            @param FOV_ANG Angular field of view for the camera.
+            @param NUM_PIXELS Grid size in pixels of the camera. 
+        """
         self.DIST_CAM = DIST_CAM
         self.DIST_SHOOTER = DIST_SHOOTER
 
@@ -24,6 +33,17 @@ class ThCamCalc:
 
 
     def get_centroid(self, cam_obj):
+
+        """!
+            Determines the centroid of heat for a given camera object.
+            This code takes a camera object as defined by mlx_cam.py and uses a weighted average
+            of pixels to determine the centroid of in a single axis. 
+            mlx_cam.get_csv is used to return comma separated heat values ranging from 0-100,
+            and those values are filtered to return only hotspots. Said hotspots are then used for
+            the centroid calculation. This function returns a pixel location of the centroid ranging from
+            0-(self.NUM_PIXELS)
+            @param cam_obj A thermal camera object from mlx_cam.py
+        """
 
         self.camera = cam_obj
 
@@ -63,6 +83,13 @@ class ThCamCalc:
 
     def get_angle(self, centroid_pix):
         
+        """!
+            Intakes a given centroid and returns an angle to turn for the shooter.
+            This function takes previously established distances and angular resolution
+            and calculates a desired angle to turn for the shooter.
+            @param centroid_pix A heat centroid location given in pixels. Intended to be the output from self.get_centroid()
+        """
+
         # determine how far from the center of the thermal cam we are
         pix_from_center = centroid_pix - (self.NUM_PIXELS / 2)
 

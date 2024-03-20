@@ -1,4 +1,7 @@
 """! @file main.py
+
+This file lays out the main functionality of the shooting mechanism. 
+
 """  
 
 import cotask
