@@ -27,8 +27,11 @@ CAD images:
 
 ![completed project](https://github.com/ME-405-w-2024/term_project/blob/main/media/CompletedProject.png)
 
-## Software Design
-***Fill in later.***
+## Firmware Design
+
+The firmware for the project was split across two microcontrollers. One handled only stepper motor control via a real-time planning method and received commands from the main controller over I2C. The other contained the main control loop and aiming algorithm, as well as control for PWM based devices such as the servo and the ESC.
+
+Further information can be found in the [firmware specific documentation](https://me-405-w-2024.github.io/term_project/).
 
 ## Electrical Design
 ![schematic](https://github.com/ME-405-w-2024/term_project/blob/main/media/ElecDiagram.png)
