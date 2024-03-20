@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.10.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>term_project: Main Page</title>
+<title>term_project: Overview</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -62,10 +62,46 @@ $(function(){initNavTree('index.html',''); initResizable(); });
 /* @license-end */
 </script>
 <div id="doc-content">
-<div class="header">
-  <div class="headertitle"><div class="title">term_project Documentation</div></div>
+<div><div class="header">
+  <div class="headertitle"><div class="title">Overview </div></div>
 </div><!--header-->
 <div class="contents">
+<div class="textblock"><p><a class="anchor" id="md_media_2mainpage"></a> </p>
+<h1><a class="anchor" id="autotoc_md1"></a>
+Description of code</h1>
+<p>The code is broken up into three main portions, the main control loop, the camera processing functions, and the remote stepper driver.</p>
+<h2><a class="anchor" id="autotoc_md2"></a>
+Main Control Loop</h2>
+<p>The main control loop is contained in <a class="el" href="main_8py.html" title="This file lays out the main functionality of the shooting mechanism.">main.py</a>. It initalizes all neccesary objects and local variables in order to run all of the functions of the launcher.</p>
+<p>This includes:</p>
+<ul>
+<li>Camera Driver</li>
+<li>Servo Driver</li>
+<li>Stepper Driver Communication</li>
+<li>Button Polling</li>
+<li>State Control</li>
+</ul>
+<p>as the main functions.</p>
+<p>As for the sequence of events controlled by the main loop, the operation is given below. This is also reflected in the state diagram.</p>
+<ol type="1">
+<li>Wait for button to be pressed.</li>
+<li>Begin continuous targeting using the camera data, which is used to yield a target angle.</li>
+<li>After 4 seconds of continuous targeting, the flywheels are spun up.</li>
+<li>After 1 second of spinup, the targeted position is held for 1 more second.</li>
+<li>After this time, the ball-indexing servo is moved to fire the ball.</li>
+<li>Another 1 second delay is given to allow the flywheels time to slow down.</li>
+<li>The turret returns to its home position and waits for another button press.</li>
+</ol>
+<p>No tasks were used, as all time-sensitive functions were either handled by timer interrupts (in the cases where PWM was needed), or were handled on separate controllers (in the case of the stepper driver)</p>
+<h2><a class="anchor" id="autotoc_md3"></a>
+Remote Stepper Driver</h2>
+<p>The aiming platform is a turret-based system that is rotated by a belt-driven stepper motor.</p>
+<p>To achieve full control over the stepper motor's motion profile, a separate microcontroller is used as a dedicated step planner and generator. The controller used was an arduino nano with firmware written in both standard C++ as well as Arduino's version of C in order to leverage the ease of use from the arduino ecosystem.</p>
+<p>This system relies heavily on accurate timing and low calculation overhead in order to achieve maximum step speed and accuracy. Additionally, motion planning was important in order to utilize the maximum speed of the stepper motor without losing steps. To accomplish these goals, a version of the <a href="https://cdck-file-uploads-europe1.s3.dualstack.eu-west-1.amazonaws.com/arduino/original/3X/f/7/f7861c732d17db124bdc320398a31bc2023ce996.pdf">stepper control algorithm as laid out by D. Austin</a> was implemented. The only notable change made to the math was a conversion to units of RPM from rad/sec. More information on using individual functions can be found in <a class="el" href="class_stepper_driver.html">StepperDriver</a>.</p>
+<p>The remote board (containing its own stepper driving hardware, the arduino, and power conversion) was communicated with via I2C, and given information of requested position, motor speed and motor accelerations. All other calculation was handled by the microcontroller on the arduino, freeing up significant time on the STM32.</p>
+<h1><a class="anchor" id="autotoc_md4"></a>
+State Diagram</h1>
+</div></div><!-- PageDoc -->
 <a href="doxygen_crawl.html"/>
 </div><!-- contents -->
 </div><!-- doc-content -->

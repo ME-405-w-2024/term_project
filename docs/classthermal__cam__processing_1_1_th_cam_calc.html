@@ -73,14 +73,14 @@ $(function(){initNavTree('classthermal__cam__processing_1_1_th_cam_calc.html',''
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a6e8b8d55ddab2b09aafa04a3b14ee30e" id="r_a6e8b8d55ddab2b09aafa04a3b14ee30e"><td class="memItemLeft" align="right" valign="top"><a id="a6e8b8d55ddab2b09aafa04a3b14ee30e" name="a6e8b8d55ddab2b09aafa04a3b14ee30e"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>__init__</b> (self, DIST_CAM, DIST_SHOOTER, FOV_ANG, NUM_PIXELS)</td></tr>
+<tr class="memitem:a6e8b8d55ddab2b09aafa04a3b14ee30e" id="r_a6e8b8d55ddab2b09aafa04a3b14ee30e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6e8b8d55ddab2b09aafa04a3b14ee30e">__init__</a> (self, DIST_CAM, DIST_SHOOTER, FOV_ANG, NUM_PIXELS)</td></tr>
+<tr class="memdesc:a6e8b8d55ddab2b09aafa04a3b14ee30e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a "calculator" object, setting up relevant distances and camera specifications.  <br /></td></tr>
 <tr class="separator:a6e8b8d55ddab2b09aafa04a3b14ee30e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a209f3d6bb63d796accd9499f8a91cc49" id="r_a209f3d6bb63d796accd9499f8a91cc49"><td class="memItemLeft" align="right" valign="top"><a id="a209f3d6bb63d796accd9499f8a91cc49" name="a209f3d6bb63d796accd9499f8a91cc49"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>get_centroid</b> (self, cam_obj)</td></tr>
+<tr class="memitem:a209f3d6bb63d796accd9499f8a91cc49" id="r_a209f3d6bb63d796accd9499f8a91cc49"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a209f3d6bb63d796accd9499f8a91cc49">get_centroid</a> (self, cam_obj)</td></tr>
+<tr class="memdesc:a209f3d6bb63d796accd9499f8a91cc49"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines the centroid of heat for a given camera object.  <br /></td></tr>
 <tr class="separator:a209f3d6bb63d796accd9499f8a91cc49"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0faafe57d24b07b704057ce5e13eb137" id="r_a0faafe57d24b07b704057ce5e13eb137"><td class="memItemLeft" align="right" valign="top"><a id="a0faafe57d24b07b704057ce5e13eb137" name="a0faafe57d24b07b704057ce5e13eb137"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>get_angle</b> (self, centroid_pix)</td></tr>
+<tr class="memitem:a0faafe57d24b07b704057ce5e13eb137" id="r_a0faafe57d24b07b704057ce5e13eb137"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0faafe57d24b07b704057ce5e13eb137">get_angle</a> (self, centroid_pix)</td></tr>
+<tr class="memdesc:a0faafe57d24b07b704057ce5e13eb137"><td class="mdescLeft">&#160;</td><td class="mdescRight">Intakes a given centroid and returns an angle to turn for the shooter.  <br /></td></tr>
 <tr class="separator:a0faafe57d24b07b704057ce5e13eb137"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
@@ -107,6 +107,113 @@ Public Attributes</h2></td></tr>
 &#160;</td><td class="memItemRight" valign="bottom"><b>camera</b></td></tr>
 <tr class="separator:a6a91eb8f6214e29196d08eead763a384"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a6e8b8d55ddab2b09aafa04a3b14ee30e" name="a6e8b8d55ddab2b09aafa04a3b14ee30e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6e8b8d55ddab2b09aafa04a3b14ee30e">&#9670;&#160;</a></span>__init__()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">thermal_cam_processing.ThCamCalc.__init__ </td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>self</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>DIST_CAM</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>DIST_SHOOTER</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>FOV_ANG</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>NUM_PIXELS</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Creates a "calculator" object, setting up relevant distances and camera specifications. </p>
+<p>Assumes that the camera and shooter are aligned in the "y" plane. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">DIST_CAM</td><td>Distance to the plane of the target to the camera. </td></tr>
+    <tr><td class="paramname">DIST_SHOOTER</td><td>Distance to the plane of the target to the shooter pivot point. </td></tr>
+    <tr><td class="paramname">FOV_ANG</td><td>Angular field of view for the camera. </td></tr>
+    <tr><td class="paramname">NUM_PIXELS</td><td>Grid size in pixels of the camera. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a0faafe57d24b07b704057ce5e13eb137" name="a0faafe57d24b07b704057ce5e13eb137"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0faafe57d24b07b704057ce5e13eb137">&#9670;&#160;</a></span>get_angle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">thermal_cam_processing.ThCamCalc.get_angle </td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>self</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>centroid_pix</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Intakes a given centroid and returns an angle to turn for the shooter. </p>
+<p>This function takes previously established distances and angular resolution and calculates a desired angle to turn for the shooter. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">centroid_pix</td><td>A heat centroid location given in pixels. Intended to be the output from self.get_centroid() </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a209f3d6bb63d796accd9499f8a91cc49" name="a209f3d6bb63d796accd9499f8a91cc49"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a209f3d6bb63d796accd9499f8a91cc49">&#9670;&#160;</a></span>get_centroid()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">thermal_cam_processing.ThCamCalc.get_centroid </td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>self</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>cam_obj</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Determines the centroid of heat for a given camera object. </p>
+<p>This code takes a camera object as defined by <a class="el" href="mlx__cam_8py.html" title="RAW VERSION This version uses a stripped down MLX90640 driver which produces only raw data,...">mlx_cam.py</a> and uses a weighted average of pixels to determine the centroid of in a single axis. mlx_cam.get_csv is used to return comma separated heat values ranging from 0-100, and those values are filtered to return only hotspots. Said hotspots are then used for the centroid calculation. This function returns a pixel location of the centroid ranging from 0-(self.NUM_PIXELS) </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cam_obj</td><td>A thermal camera object from <a class="el" href="mlx__cam_8py.html" title="RAW VERSION This version uses a stripped down MLX90640 driver which produces only raw data,...">mlx_cam.py</a> </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>src/<a class="el" href="thermal__cam__processing_8py.html">thermal_cam_processing.py</a></li>
 </ul>
